@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Michroma&display=swap');
+
+/* General Reset and Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Comfortaa, sans-serif;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    color: white;
+    padding: 15px;
+    z-index: 10;
+    text-align: center;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Header Section */
+header {
+    text-align: center;
+    padding: 100px 0;
+    color: white;
+}
+
+header h1 {
+    font-family: Michroma;
+    font-size: 3em;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Section Styling */
+.section {
+    padding: 50px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: #fff;
+    font-family: Michroma;
+}
+
+.section h3{
+    margin-bottom: 20px;
+    font-size: x-large;
+}
+
+.section p{
+    line-height: 1.5;
+}
+
+.ellipse {
+    position: absolute;
+    top: -50px; /* Push it up so it overlaps the section */
+    left: 0;
+    width: 100%;
+    height: 150px; /* Control the height of the ellipse */
+    background-color: black; /* Make it white */
+    border-top-left-radius: 100% 60px; /* Top-left rounded */
+    border-top-right-radius: 100% 60px; /* Top-right rounded */
+    z-index: -1;
+}
+
+/* Projects Section */
+#projects {
+     padding: 50px;
+    text-align: center;
+    background-color: #000; /* Default black background */
+    transition: background-color 1s ease; /* Smooth transition for the background color */
+}
+.project-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.project {
+    background-color: #222; /* Dark background for the projects */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    padding: 20px;
+    height: 100%;
+    transition: transform 0.3s ease;
+    color: #fff;
+    border: 1px solid #444; /* Border color to match the theme */
+    display: flex;
+    flex-direction: column;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.tag {
+    background-color: #444; /* Dark background for contrast */
+    color: white;
+    font-size: 0.8em;
+    padding: 6px 12px;
+    border-radius: 50px; /* Makes it pill-shaped */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.index-img {
+    width: 360px;
+    height: 180px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.project:hover {
+    transform: scale(1.05);
+    background-color: #333; /* Darker background when hovered */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #222;
+    color: white;
+}
+
+/* Animation Container */
+.animation-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Black background */
+}
+
+/* Wrapper styling */
+.wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* The circle animation */
+.circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    animation: grow 2s infinite ease-in-out;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    z-index: 7;
+}
+
+.about-image{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.small-title{
+    margin-bottom: 10px;;
+}
+
+.about-content p {
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+
+.social-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between the icons */
+}
+
+.social-icon {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: #444; /* Dark background for the icons */
+    border-radius: 50%; /* Makes the icons round */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.social-icon i {
+    color: #fff; /* White color for the icons */
+    font-size: 1.5em; /* Adjust the size of the icons */
+}
+
+.social-icon:hover {
+    background-color: #f39c12; /* Hover effect (orange color) */
+}
+
+.social-icon:hover i {
+    color: #fff; /* Ensure the icon stays white on hover */
+}
+
+.contact-content p{
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.contact-content a{
+    text-decoration: none;
+}
+
+/* Optional: Add responsive design */
+@media (max-width: 768px) {
+    .social-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Keyframe animation for the grow effect */
+@keyframes grow {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(2.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Media Queries for Responsiveness */
+
+/* For Tablets (Portrait mode) and larger screens */
+@media (max-width: 768px) {
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .project-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .project {
+        width: 90%; /* Full width of the container */
+    }
+
+    .index-img {
+        width: 100%;
+    }
+}
+
+/* For Mobile Devices */
+@media (max-width: 480px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .project-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .project {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .index-img {
+        width: 100%;
+        height: auto;
+    }
+
+}
+
