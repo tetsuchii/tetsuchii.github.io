@@ -1,10 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Michroma&display=swap');
 
+:root {
+  --primary-color: #7DC95E; /* Blue */
+  --secondary-color: #648767; /* Red */
+  --text-color: black; /* Dark Gray */
+}
+
 /* General Reset and Styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
 }
 
 body {
@@ -62,7 +73,7 @@ nav {
     bottom: -5px;
     width: 0;
     height: 2px;
-    background: white;
+    background: var(--secondary-color);
     transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
 }
 
@@ -72,7 +83,7 @@ nav {
 }
 
 .nav-links a:hover {
-    color: #f39c12; /* Change color on hover */
+    color: var(--primary-color); /* Change color on hover */
 }
 
 .nav-links a:active {
@@ -127,11 +138,22 @@ header p {
     margin-top: 10px;
 }
 
+.rotate {
+    display: inline-block; /* Needed for rotation */
+    transition: transform 0.5s ease-in-out;
+    cursor:pointer !important;
+}
+
+.rotate.active {
+    transform: rotate(180deg) translateY(-5px); /* Adjust rotation angle as needed */
+}
+
 /* Section Styling */
 .section {
     margin: 20px;
     margin-bottom: 100px;
     text-align: center;
+    max-width: 1920px;
 }
 
 .section h2 {
@@ -146,7 +168,7 @@ header p {
     font-size: x-large;
 }
 
-.section p{
+.section p, .section ul{
     line-height: 1.5;
 }
 
@@ -164,33 +186,60 @@ header p {
 
 /* Projects Section */
 #projects {
-     padding: 50px;
+    margin: 0;
+    padding: 50px;
     text-align: center;
-    background-color: #000; /* Default black background */
-    transition: background-color 1s ease; /* Smooth transition for the background color */
+    background-color: #000;
+    transition: background-color 1s ease;
 }
+
 .project-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     margin-top: 30px;
     flex-wrap: wrap;
-    align-items: stretch;
+    align-items: stretch; /* Ensures consistent height */
 }
 
 .project {
-    background-color: #222; /* Dark background for the projects */
+    background-color: #222;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 400px;
-    padding: 20px;
-    height: 100%;
     transition: transform 0.3s ease;
     color: #fff;
-    border: 1px solid #444; /* Border color to match the theme */
+    border: 1px solid #444;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    overflow: hidden; /* Ensures no content spills */
+}
+
+.index-img {
+    width: 100%; /* Full width */
+    height: 200px; /* Consistent height */
+    object-fit: cover; /* Ensures image fills space without stretching */
+    border-radius: 10px 10px 0 0; /* Keep rounded corners only at the top */
+}
+
+/* Ensuring content is evenly spaced */
+.project-content {
+    padding: 20px;
+    flex-grow: 1; /* Pushes content to fill available space */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.project-content h3 {
+    align-self: center;
+    height: 50px; /* Adjust height to fit one line */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .tags {
@@ -199,30 +248,23 @@ header p {
     justify-content: center;
     align-items: baseline;
     gap: 8px;
-    margin-top: 15px;
-    padding-bottom: 15px;
+    margin-top: auto; /* Push tags to the bottom */
+    padding-top: 15px;
 }
 
 .tag {
-    background-color: #444; /* Dark background for contrast */
+    background-color: #444;
     color: white;
     font-size: 0.8em;
     padding: 6px 12px;
-    border-radius: 50px; /* Makes it pill-shaped */
+    border-radius: 50px;
     font-weight: bold;
     text-transform: uppercase;
 }
 
-.index-img {
-    width: 360px;
-    height: 180px;
-    border-radius: 6px;
-    margin-bottom: 20px;
-}
-
 .project:hover {
     transform: scale(1.05);
-    background-color: #333; /* Darker background when hovered */
+    background-color: #333;
 }
 
 /* Footer */
@@ -265,6 +307,16 @@ footer {
     z-index: 7;
 }
 
+.about-content {
+    max-width: 850px; /* Matches actual content width of .project-container */
+    margin: 0 auto; /* Centers the section */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
 .about-image{
     width: 200px;
     height: 200px;
@@ -273,12 +325,16 @@ footer {
 }
 
 .small-title{
-    margin-bottom: 10px;;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
 .about-content p {
     line-height: 1.5;
     margin-bottom: 10px;
+    max-width: 700px; /* Prevents overly long lines */
+
 }
 
 
@@ -354,10 +410,13 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 40px;
-    width: 100%;
     align-items: flex-start;
     gap: 20px;
+
+    width: 80%;
+    max-width: 1920px;
+    
+    margin: 0 auto 40px auto; /* Centers horizontally */
 }
 
 .project-info p{
@@ -370,14 +429,44 @@ footer {
     width: 40%;
 }
 
-.left-title-boxes{
+.divider {
+    width: 80%; /* Adjust width */
+    margin:50px auto; /* Centers it and adds spacing */
+    border: none;
+    border-top: 2px solid #444; /* Change color and thickness */
+}
+
+.citate {
+    width: 80%;
+    max-width: 1920px;
+    margin: 40px auto; /* Centers it */
+    font-size: 2rem; /* Adjust size as needed */
+    font-weight: bold;
+    text-align: center;
+    font-style: italic;
+    color: var(--secondary-color); /* Adjust color */
+    line-height: 1.4;
+}
+
+.text-content-center{
+    width: 80%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.text-content-center h3{
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.left-title-boxes {
     display: flex;
-    width: 100%;
     flex-direction: row-reverse;
     justify-content: space-between;
-    margin-bottom: 40px;
     align-items: flex-start;
     gap: 20px;
+    width: 80%;
+    margin: 0 auto 40px auto; /* Centers the element horizontally */
 }
 
 .left-title-boxes h2{
@@ -386,10 +475,22 @@ footer {
     margin-right: 20px;
 }
 
-.left-title-boxes p {
+.left-title-boxes p, .left-title-boxes ul {
     width: 60%;
     text-align: left;
     padding: 10px 0px;
+}
+
+.left-title-boxes ul{
+    padding-left: 70px;
+}
+
+.left-title-boxes ul li{
+    margin-bottom: 10px;
+}
+
+.left-title-boxes ul li:last-child {
+    margin-bottom: 0px;
 }
 
 
@@ -414,9 +515,10 @@ footer {
 
 /*Table*/
 table {
-    width: 100%; /* Make the table take full width */
+    width: 80%; /* Make the table take full width */
     border-collapse: collapse;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Centers the table horizontally */
 }
 
 /* Table Header and Cells */
@@ -434,7 +536,7 @@ th {
 
 /* Links inside table */
 td a {
-    color: #f39c12;
+    color: var(--primary-color);
     text-decoration: none;
 }
 
@@ -474,19 +576,23 @@ td a:hover {
     align-items: center;
     font-size: 1.5em;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .circle-label {
     margin-top: 15px;
     font-size: 1em;
     color: white;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .circle-description {
     font-size: 1em;
+    text-align: left;
     font-weight: 200;
     color: white;
+    margin-left: 20px;
 }
 
 #research p{
@@ -494,9 +600,6 @@ td a:hover {
     margin-right: 30px;
 }
 
-.section h3{
-    margin-top: 40px;
-}
 /* Media Queries for Responsiveness */
 
 /* For Tablets (Portrait mode) and larger screens */
@@ -586,22 +689,42 @@ td a:hover {
         font-size: 1em;
     }
 
+   #projects {
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+
     .project-container {
-        flex-direction: column;
-        gap: 20px;
-        flex-wrap: wrap;
+        flex-direction: column; /* Stack projects vertically */
+        align-items: center; /* Center items */
+        gap: 20px; /* Reduce gap between projects */
     }
 
     .project {
-        width: 100%;
-        padding: 10px;
+        width: 100%; /* Make project take full width */
+        max-width: 350px; /* Limit max width */
+        margin: 0 auto; /* Center projects */
     }
 
     .index-img {
-        width: 100%;
-        height: auto;
+        height: 150px; /* Reduce image height */
     }
 
+    .project-content {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+
+    .project-content h3 {
+        font-size: 1.2em; /* Reduce heading size for smaller screens */
+    }
+
+    .tags {
+        gap: 6px; /* Reduce gap between tags */
+    }
+
+    .tag {
+        font-size: 0.7em; /* Smaller tag size */
+        padding: 4px 10px; /* Adjust tag padding */
+    }
       .social-container {
         flex-wrap: nowrap; /* Prevents wrapping so they stay in one row */
         justify-content: center;
@@ -626,12 +749,18 @@ td a:hover {
 }
 
 .left-title-boxes p,
-.project-info p {
+.project-info p, .left-title-boxes ul {
     max-width: 600px; /* Ensures both paragraphs have the same width */
     width: 100%; /* Prevents shrinking */
     text-align: center;
     margin-top: 10px;
 }
+
+.left-title-boxes ul{
+    text-align: left ;
+    padding-left: 50px;
+}
+
 
  .image-grid {
         flex-direction: column;
@@ -702,5 +831,19 @@ td a:hover {
         width: 80px;  /* Adjust the size of the circle */
         height: 80px;
         font-size: 1.2em;  /* Adjust the font size */
+    }
+
+     .project-content h3 {
+        font-size: 1em; /* Further reduce heading size */
+    }
+
+    .tags {
+        flex-direction: column; /* Stack tags vertically */
+        align-items: center; /* Center the tags */
+    }
+
+    .tag {
+        font-size: 0.6em; /* Even smaller tag size */
+        padding: 4px 8px; /* Adjust tag padding further */
     }
 }

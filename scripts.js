@@ -36,9 +36,14 @@ document.getElementById("pulse-circle").addEventListener("click", function () {
   }, 1500); // Delay before the circle returns to normal size
 });
 
-window.onload = function () {
+function equalizeCardHeights() {
   const cards = document.querySelectorAll(".project");
   let maxHeight = 0;
+
+  // Reset heights before calculating
+  cards.forEach((card) => {
+    card.style.height = "auto"; // Reset height to auto for recalculation
+  });
 
   // Find the tallest card
   cards.forEach((card) => {
@@ -52,7 +57,11 @@ window.onload = function () {
   cards.forEach((card) => {
     card.style.height = maxHeight + "px";
   });
-};
+}
+
+// Run function when page loads and on window resize
+window.onload = equalizeCardHeights;
+window.onresize = equalizeCardHeights;
 
 document.addEventListener("DOMContentLoaded", function () {
   const hamburger = document.getElementById("hamburger-btn"); // Using the same button
@@ -75,5 +84,13 @@ document.addEventListener("DOMContentLoaded", function () {
       hamburger.classList.remove("active");
       hamburger.innerHTML = "☰"; // Reset icon to hamburger
     });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const letterN = document.querySelector(".rotate");
+
+  letterN.addEventListener("click", function () {
+    letterN.classList.toggle("active");
   });
 });
