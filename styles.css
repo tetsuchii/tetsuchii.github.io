@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Michroma&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
   --primary-color: #7DC95E; /* Blue */
@@ -19,9 +19,18 @@ img{
 }
 
 body {
-    font-family: Comfortaa, sans-serif;
+    font-family: Raleway, sans-serif;
     background-color: #000; /* Black background */
     color: #fff; /* White text */
+}
+
+a, a p{
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover, a:hover p{
+    opacity: 80%;
 }
 
 /* Navigation */
@@ -207,7 +216,7 @@ header p {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 400px;
-    transition: transform 0.3s ease;
+    transition: transform 0.001s ease;
     color: #fff;
     border: 1px solid #444;
     display: flex;
@@ -240,6 +249,12 @@ header p {
     justify-content: center;
     text-align: center;
     margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 1.8em;
+}
+
+.project-content p {
+    font-weight: 300;
 }
 
 .tags {
@@ -248,7 +263,6 @@ header p {
     justify-content: center;
     align-items: baseline;
     gap: 8px;
-    margin-top: auto; /* Push tags to the bottom */
     padding-top: 15px;
 }
 
@@ -363,7 +377,7 @@ footer {
 }
 
 .social-icon:hover {
-    background-color: #f39c12; /* Hover effect (orange color) */
+    background-color: var(--primary-color); /* Hover effect (orange color) */
 }
 
 .social-icon:hover i {
@@ -377,6 +391,10 @@ footer {
 
 .contact-content a{
     text-decoration: none;
+}
+
+.design-process img{
+    width: 70%;
 }
 
 
@@ -421,7 +439,7 @@ footer {
 
 .project-info p{
     width: 60%;
-    text-align: right;
+    text-align: left;
 }
 
 .project-info h2{
@@ -452,6 +470,8 @@ footer {
     width: 80%;
     max-width: 1920px;
     margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .text-content-center h3{
@@ -495,6 +515,7 @@ footer {
 
 
 .image-grid {
+    margin-top: 40px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -544,8 +565,7 @@ td a:hover {
     opacity: 0.7;
 }
 
-
-    .circle-container {
+.circle-container {
     display: flex;
     justify-content: space-between;
     gap: 20px;
@@ -564,18 +584,12 @@ td a:hover {
     margin-bottom: 20px;
 }
 
-
-.circle-text {
+.circle-image {
     width: 100px;
     height: 100px;
-    background-color: #444;
-    color: white;
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5em;
-    font-weight: bold;
+    background-size: cover;
+    background-position: top;
     margin-bottom: 10px;
 }
 
@@ -584,13 +598,13 @@ td a:hover {
     font-size: 1em;
     color: white;
     margin-bottom: 20px;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .circle-description {
     font-size: 1em;
     text-align: left;
-    font-weight: 200;
+    font-weight: 300;
     color: white;
     margin-left: 20px;
 }
@@ -767,15 +781,19 @@ td a:hover {
         align-items: center;
     }
 
+    .design-process img{
+        width: 100%;
+    }
+
 
     /*Table*/
     /* Stack the table on mobile and make it scrollable */
     table {
         display: block; /* Make the table block-level */
-        width: 100%;
         overflow-x: auto; /* Allow horizontal scrolling */
         white-space: nowrap; /* Prevent text from wrapping */
         border: none; /* Remove borders from table for mobile */
+        margin: 0 auto;
     }
 
     /* Remove the table headers and make rows block elements */
@@ -838,12 +856,13 @@ td a:hover {
     }
 
     .tags {
-        flex-direction: column; /* Stack tags vertically */
+        flex-direction: row; /* Stack tags vertically */
+        flex-wrap: wrap;
         align-items: center; /* Center the tags */
     }
 
     .tag {
-        font-size: 0.6em; /* Even smaller tag size */
+        font-size: 0.8em; /* Even smaller tag size */
         padding: 4px 8px; /* Adjust tag padding further */
     }
 }

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phoca</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="fixed-nav">
+        <div class="nav-container">
+            <button class="hamburger" id="hamburger-btn">&#9776;</button> <!-- Hamburger Menu -->
+            <ul class="nav-links">
+                <li><a href="index.html#projects" data-aos="fade-up" data-aos-duration="1000">Projects</a></li>
+                <li><a href="index.html#about" data-aos="fade-up" data-aos-duration="1000">About</a></li>
+                <li><a href="index.html#contact" data-aos="fade-up" data-aos-duration="1000">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="header">
+        <h1>Hungarian Innovation Ecosystem Map</h1>
+        <p>New intuitive and more user-friendly UI for NIÜ (Hungarian National Innovation Agency) on the
+            Hungarian Innovation Ecosystem Map.</p>
+    </header>
+
+
+    <section id="project-overview" class="section ">
+        <div class="project-image">
+            <img src="/images/niu/index-niu.png" alt="Project Title Image">
+        </div>
+        <div class="project-info">
+            <h2>About the Project</h2>
+            <p>
+                The Hungarian National Innovation Agency already had a Hungarian Innovation Ecosystem Map with a very
+                simple and
+                early-stage user interface. They had a call for tenders to redesign the site and make it more intuitive
+                and interactive
+                to make it easier and more fun to use. We applied as a team with Hajnal Mészáros, Luca Sára Kiss and
+                myself and worked
+                on the project together.
+            </p>
+        </div>
+    </section>
+
+    <section id="project-data" class="section">
+        <table>
+            <tr>
+                <th>Project type</th>
+                <th>Role</th>
+                <th>Industry</th>
+                <th>Tools</th>
+                <th>Duration</th>
+                <th>Other info</th>
+            </tr>
+            <tr>
+                <td>
+                    UI Design for web
+                </td>
+                <td>
+                    UI designer
+                </td>
+                <td>
+                    Entrepreneurship Support
+                </td>
+                <td>
+                    Figma
+                </td>
+                <td>January 2025 – March 2025</td>
+                <td>
+                    Team project with Hajnal Mészáros and Luca Sára Kiss for a tender.
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="problem" class="section">
+        <div class="left-title-boxes">
+            <h2>The Problem</h2>
+            <div>
+                <p>When we started to investigate the old design of the map, we identified many pain points where the
+                    use and navigation of
+                    the map was confusing for users. In order to understand how to develop a new concept, we collected
+                    the patterns that did
+                    not work well and that we wanted to avoid. These patterns were the following:
+                </p>
+                <ul>
+                    <li>Identical appearance of clickable and non-clickable elements.</li>
+                    <li>Unclear hierarchy and grouping of information.</li>
+                    <li>Information noise, difficult to find the relevant information and the connection between them.
+                    </li>
+                    <li>Intrusive popups lacking meaningful information.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <blockquote class="citate">
+            “Our goal was to eliminate popups and present all essential information directly on the screen, using
+            engaging yet
+            unobtrusive interactions and animations to ensure a seamless and enjoyable map experience.”
+        </blockquote>
+        <hr class="divider">
+    </section>
+
+    <!-- Design Process Section -->
+    <section id="design-process" class="section">
+        <h2>Design Process</h2>
+        <p class="text-content-center">I used the double diamond design process for this project. The image below shows
+            the different parts of the
+            process,
+            like discovering the problem area, defining the pain points, and then ideating on different solutions to
+            find the one to
+            narrow it down and work it out to a high fidelity prototype. </p>
+        <div class="design-process">
+            <img src="images/phoca/double-diamond.svg" alt="Double diamond design process">
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="section">
+        <div class="text-content-center">
+            <h2>Research</h2>
+            <p>To support my hypotheses and gather data, I used both primary and secondary research methods to explore
+                the challenges
+                faced by rural women caring for elderly relatives. A key finding was that they do not see themselves as
+                carers but
+                rather view these tasks as a duty. This research led to identifying four key pain points, offering
+                deeper insights and
+                potential solutions.</p>
+            <h3>These pain points were the
+                following:</h3>
+            <div class="circle-container">
+                <div class="circle-standard">
+                    <div class="circle-image" style="background-image: url('/images/phoca/alone-phoca.png');"></div>
+                    <div class="circle-label">Feeling alone</div>
+                    <div class="circle-description">
+                        <ul>
+                            <li>Isolation is a big problem in rural area.</li>
+                            <li>There is no one to talk to about frustration.</li>
+                            <li>Sensitive topics.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="circle-standard">
+                    <div class="circle-image" style="background-image: url('/images/phoca/education-phoca.png');"></div>
+                    <div class="circle-label">Feeling unqualified</div>
+                    <div class="circle-description">
+                        <ul>
+                            <li>These people have no proper training in nursing care.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="circle-standard">
+                    <div class="circle-image" style="background-image: url('/images/phoca/stress-phoca.png');"></div>
+                    <div class="circle-label">Feeling stressed</div>
+                    <div class="circle-description">
+                        <ul>
+                            <li>Managing someone else's life.</li>
+                            <li>Knowing that it's the last chapter in your loved one's life.</li>
+                            <li>Dealing with early grief.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="circle-standard">
+                    <div class="circle-image" style="background-image: url('/images/phoca/disorganised-phoca.png');">
+                    </div>
+                    <div class="circle-label">Feeling disorganised</div>
+                    <div class="circle-description">
+                        <ul>
+                            <li>Doctor's visit and medication.</li>
+                            <li>Constant need for planning and administration.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <p>Although there are various software solutions for task management and optimization, as well as resources
+                for self-care
+                and mental well-being, there is no digital product specifically designed to support home caregivers for
+                the elderly and
+                address their unique needs.</p>
+
+            <h3>Persona:</h3>
+            <img src="images/phoca/phoca-persona.png" alt="Persona image">
+            <h3>Ideation map:</h3>
+            <div class="design-process"><img src="images/phoca/Ideationmap.png" alt="Ideation map"></div>
+
+            <h3>Solution helping in these problems:</h3>
+            <div class="circle-container">
+                <div class="circle-standard">
+                    <div class="circle-image" style="background-image: url('/images/phoca/alone-phoca.png');"></div>
+                    <div class="circle-label">Community building</div>
+                    <div class="circle-description">
+                        <ul>
+                            <li>Community forum.</li>
+                            <li>Connect with other caregivers for support and sharing.</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="circle-standard">
+                    <div class="circle-image" style="background-image: url('/images/phoca/study-phoca.png');"></div>
+                    <div class="circle-label">Education
+                    </div>
+                    <div class="circle-description">
+                        <ul>
+                            <li>AI Support & Articles & Podcasts.</li>
+                            <li>Personalized mental health advice and content from professionals.</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="circle-standard">
+                    <div class="circle-image" style="background-image: url('/images/phoca/well-being-phoca.png');">
+                    </div>
+                    <div class="circle-label">Well-being tools
+                    </div>
+                    <div class="circle-description">
+                        <ul>
+                            <li>Meditation & Journaling.</li>
+                            <li>Space for emotional expression and mindfulness.</li>
+                            <li>Tracks general mood and alerts when outside help is needed.</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="circle-standard">
+                    <div class="circle-image" style="background-image: url('/images/phoca/cooperation-phoca.png');">
+                    </div>
+                    <div class="circle-label">Cooperation
+                    </div>
+                    <div class="circle-description">
+                        <ul>
+                            <li>Calendar to track medications, appointments, and caregiving tasks.</li>
+                            <li>Data can be shared with other carers (family and friends).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <blockquote class="citate">
+                “Why the name "Phoca"? It means seal in Latin. Inspired by the Paro therapeutic
+                robot.
+                You
+                can't
+                look at a baby seal without feeling warmth
+                and joy in your heart.”
+            </blockquote>
+        </div>
+        <hr class="divider">
+    </section>
+
+    <!-- Userflow Section -->
+    <section id="userflow" class="section">
+        <div class="text-content-center">
+            <h2>User flow</h2>
+            <p>With this user flow, it's easy to see how the above functions work and what they look like step by step.
+            </p>
+            <div class="userflow-images">
+                <img src="images/phoca/userflow.png" alt="User flow">
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Wireframes Section -->
+    <section id="wireframes" class="section">
+        <div class="text-content-center">
+            <h2>Wireframes</h2>
+            <p class="text-content-center">Here are some of the initial wireframes for the project. These wireframes
+                represent the basic layout and
+                flow
+                of the
+                product.</p>
+            <img src="images/phoca/calendarflow-lofi.png" alt="Wireframe 1">
+            <p class="text-content-center"><i>Wireframes about the task management calendar</i></p>
+            <img src="images/phoca/communityflow-lofi.png" alt="Wireframe 2">
+            <p class="text-content-center"><i>Wireframes about the community forum</i></p>
+
+        </div>
+    </section>
+
+    <!-- Final Deliverables Section -->
+
+    <section id="final-images" class="section">
+        <h2>Final Deliverables</h2>
+        <p class="text-content-center">You can check out the high-fidelity prototype in Figma here: <a
+                href="https://www.figma.com/proto/Kw1cUyBmLdCpXvZ8Cf1StD/PHOCA?node-id=335-11625&p=f&t=zEUmTTvVb7yNuiv9-1&scaling=scale-down&content-scaling=fixed&page-id=335%3A11010&starting-point-node-id=335%3A11625&show-proto-sidebar=1">Link
+                to prototype.</a></p>
+        <div class="image-grid">
+            <div class="grid-item"><img src="/images/phoca/phoca01.png" alt="Image 1"></div>
+            <div class="grid-item"><img src="/images/phoca/phoca02.png" alt="Image 2"></div>
+            <div class="grid-item"><img src="/images/phoca/phoca03.png" alt="Image 3"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 My Portfolio</p>
+    </footer>
+    <script src="/scripts.js" defer></script>
+</body>
+
+</html>
