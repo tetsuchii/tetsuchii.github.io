@@ -4,13 +4,11 @@ AOS.init({
   once: true, // ensures the animation happens only once when scrolling
 });
 
-const projects = document.getElementById("projects");
-
 // Smooth scroll and transform circle on click
 document.getElementById("circle").addEventListener("click", function () {
   // Change the background color of the projects section immediately
   // Scroll to the Projects section after the transition starts
-  projects.removeAttribute("data-aos");
+  document.getElementById("projects").removeAttribute("data-aos");
 
   setTimeout(() => {
     document.getElementById("projects").scrollIntoView({
