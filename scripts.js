@@ -23,7 +23,8 @@ document.getElementById("circle").addEventListener("click", function () {
     // Reset the pulsing circle's size and animation
     this.style.transition = "transform 0.5s ease"; // Ensure smooth transition back to normal
     this.style.transform = "scale(1)"; // Reset scale back to normal
-    this.style.animation = "pulse 2s infinite ease-in-out"; // Restart the pulse animation
+    this.style.animation =
+      "blobMotion 2s infinite ease-in-out alternate, blobShape 3s infinite ease-in-out alternate"; // Restart the pulse animation
   }, 1500); // Delay before the circle returns to normal size
 });
 
