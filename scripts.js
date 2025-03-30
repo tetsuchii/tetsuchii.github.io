@@ -4,23 +4,14 @@ AOS.init({
   once: true, // ensures the animation happens only once when scrolling
 });
 
+const projects = document.getElementById("projects");
+
 // Smooth scroll and transform circle on click
-document.getElementById("pulse-circle").addEventListener("click", function () {
+document.getElementById("circle").addEventListener("click", function () {
   // Change the background color of the projects section immediately
-  const projectsSection = document.getElementById("projects");
-  projectsSection.style.transition = "background-color 2s ease"; // Smooth background color transition
-  projectsSection.style.backgroundColor = "white"; // Change to white
-  projectsSection.style.color = "#000"; // Change text color to black for contrast
-  const titleChange = document.getElementById("projects-name");
-  titleChange.style.color = "#000";
-  const ellipse = document.getElementById("ellipse");
-  ellipse.style.backgroundColor = "white";
-
-  // Enlarge the pulsing circle by scaling it up
-  this.style.transition = "transform 1s ease"; // Smooth scale-up transition
-  this.style.transform = "scale(10)"; // Enlarge the circle significantly
-
   // Scroll to the Projects section after the transition starts
+  projects.removeAttribute("data-aos");
+
   setTimeout(() => {
     document.getElementById("projects").scrollIntoView({
       behavior: "smooth",
@@ -32,7 +23,7 @@ document.getElementById("pulse-circle").addEventListener("click", function () {
     // Reset the pulsing circle's size and animation
     this.style.transition = "transform 0.5s ease"; // Ensure smooth transition back to normal
     this.style.transform = "scale(1)"; // Reset scale back to normal
-    this.style.animation = "grow 2s infinite ease-in-out"; // Restart the pulse animation
+    this.style.animation = "pulse 2s infinite ease-in-out"; // Restart the pulse animation
   }, 1500); // Delay before the circle returns to normal size
 });
 
