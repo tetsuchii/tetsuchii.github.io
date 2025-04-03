@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumo Robot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="fixed-nav">
+        <div class="nav-container">
+            <button class="hamburger" id="hamburger-btn">&#9776;</button> <!-- Hamburger Menu -->
+            <ul class="nav-links">
+                <li><a href="index.html#projects" data-aos="fade-up" data-aos-duration="1000">Projects</a></li>
+                <li><a href="index.html#about" data-aos="fade-up" data-aos-duration="1000">About</a></li>
+                <li><a href="index.html#contact" data-aos="fade-up" data-aos-duration="1000">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header id="header">
+        <h1>Sumo Robot</h1>
+        <p>Autonomous (mini) sumo robot build for the Robotex International competition using an Arduino
+            microcontroller and various sensors.</p>
+    </header>
+
+    <!-- Index image -->
+    <section id="project" class="section ">
+        <div class="project-image">
+            <img src="/images/sumorobot/index-sumo.png" alt="Project Title Image">
+        </div>
+    </section>
+
+    <!-- Project info -->
+    <section id="project" class="section">
+        <div class="project-info">
+            <h2>About the Project</h2>
+            <p>
+                I got the chance to build a sumo robot and prepare for the Robotex International competition. This was
+                the first time I
+                had experimented with electronics and hardware, as well as figuring out how to build something physical.
+                There were many
+                different types of competition to choose from, and I chose the Mini Sumo category because it just felt
+                so exciting to
+                try and build my own Autonomus fighter robot. In the end, I unfortunately couldn't take part in the
+                competition for
+                administrative reasons, but it was a formative experience for me.</p>
+        </div>
+    </section>
+
+    <!-- Table of infos -->
+    <section id="project" class="section">
+        <table>
+            <tr>
+                <th>Project type</th>
+                <th>Role</th>
+                <th>Industry</th>
+                <th>Tools</th>
+                <th>Duration</th>
+                <th>Other info</th>
+            </tr>
+            <tr>
+                <td>
+                    Robot build
+                </td>
+                <td>
+                    Engineer
+                </td>
+                <td>
+                    Robotics
+                </td>
+                <td>
+                    Arduino IDE, Fritzing
+                </td>
+                <td>March 2023 – June 2023</td>
+                <td>
+                    It was an independent laboratory work at Budapest University of Technology and Economics.
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="project" class="section">
+        <div class="left-title-boxes">
+            <h2>The Problem</h2>
+            <div>
+                <p>
+                    To make a sumo robot, I first had to understand the concept of sumo. There are many categories with
+                    different
+                    objectives, but in the Mini Sumo category, the objective is to push the opposing robot out of the
+                    ring without leaving
+                    it. The detailed rules can be found here: <a href="https://robotex.international/mini-sumo/">Click
+                        here!</a>
+                </p>
+            </div>
+        </div>
+        <hr class="divider">
+    </section>
+
+    <!-- Research Section -->
+    <section id="project" class="section">
+        <div class="text-content-center">
+            <h2>Design process</h2>
+            <p>First I had to understand the basics of electronics, so I started with some smaller tasks, like blinking
+                LEDs and
+                connecting them to the integrated button on the Arduino board. I used the Arduino Uno board for this
+                project because
+                it's the best board for beginners, as it's very easy to use.</p>
+            <p>After the first steps I was slowly getting an idea of what sensors and accessories I would need, so I
+                started to test every unit.</p>
+            <h3>The needed units were the following:</h3>
+            <div class="circle-container">
+                <div class="circle-standard">
+                    <div class="circle-image"
+                        style="background-image: url('/images/niu/client-icon.svg'); border-radius: 0%;"></div>
+                    <div class="circle-label">Motion control</div>
+                    <div class="circle-description">
+                        <ul>
+                            <li>Reviewing the brief.</li>
+                            <li>Reviewing the brand guidelines.</li>
+                            <li>Reviewing competitor solutions</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="circle-standard">
+                    <div class="circle-image"
+                        style="background-image: url('/images/niu/hierarchy-icon.svg'); border-radius: 0%;"></div>
+                    <div class="circle-label">Distance detection</div>
+                    <div class="circle-description">
+                        <ul>
+                            <li>Defining groups of information.</li>
+                            <li>Defining functions.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="circle-standard">
+                    <div class="circle-image" style="background-image: url('/images/niu/ideate-icon.svg');"></div>
+                    <div class="circle-label">Reflection detection</div>
+                    <div class="circle-description">
+                        <ul>
+                            <li>Rapid paper wireframing.</li>
+                            <li>Brainstorming and brainstorming and even more brainstorming.</li>
+                            <li>Quick and dirty prototyping to try out ideas.</li>
+                            <li>Listing possible new features.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="circle-standard">
+                    <div class="circle-image" style="background-image: url('/images/niu/implement-icon.svg');"></div>
+                    <div class="circle-label">Implementation</div>
+                    <div class="circle-description">
+                        <ul>
+                            <li>Prototyping in Figma.</li>
+                            <li>Ensuring alignment with the brand guidelines.</li>
+                            <li>Considering accessibility factors.</li>
+                            <li>User testing.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <p>As mentioned earlier, the Hungarian Innovation Ecosystem Map already existed, so our task was to redesign
+                it. To
+                highlight our work and the changes, I've put the old and new versions side by side.</p>
+    </section>
+
+    <!-- Wireframes Section -->
+    <section id="project" class="section">
+        <div class="text-content-center">
+            <h2>Changes in the UI</h2>
+            <p class="text-content-center">Here are some of the initial changes we made to the UI of the map. I cut out
+                the different sections to better show our solutions and the original problems.</p>
+            <h3>Hero section, actors of the ecosystem</h3>
+            <div class="comparison-grid">
+                <div class="comparison-row">
+                    <div class="comparison-column">
+                        <img class="grid-item" src="images/niu/s3-old.png" alt="Old version">
+                        <p class="comparison-text">
+                            In the old version, it was really hard to recognize the actors' relations within the
+                            ecosystem
+                            and their hierarchy. It wasn't clear which element was clickable, and even if you guessed
+                            correctly
+                            and clicked on an actually clickable element, an almost full-screen modal popped up with
+                            some info
+                            and a link.
+                        </p>
+                    </div>
+                    <div class="comparison-column">
+                        <img class="grid-item" src="images/niu/s3-new.png" alt="New version">
+                        <p class="comparison-text">
+                            In our solution, we used the size and opacity of the elements to show how significant each
+                            ecosystem unit is. We also brought closer the units that are connected to each other.
+                            Clicking on an
+                            element enlarges it to display details about the actor/unit along with a link to their
+                            website.
+                            Additionally, we added navigation to make it easier to find other sections, such as
+                            strategic
+                            indicators,
+                            financing options, and the ecosystem.
+                        </p>
+                    </div>
+                </div>
+                <h3>Strategic indicators</h3>
+                <div class="comparison-row">
+                    <div class="comparison-column">
+                        <img class="grid-item" src="images/niu/indicators-old.png" alt="Old version">
+                        <p class="comparison-text">
+                            In the old version, it looked like this section was merged with the introduction of the
+                            ecosystem players. This section
+                            is absolutely not clickable, but because it looked like the section above, it was not clear
+                            to the user.
+                        </p>
+                    </div>
+                    <div class="comparison-column">
+                        <img class="grid-item" src="images/niu/indicators-new.png" alt="New version">
+                        <p class="comparison-text">
+                            In the new version, we tried to make this text-heavy section more consumable and
+                            understandable by using icons. We got
+                            rid of the centre-aligned text and made lists to make it easier to understand what goes
+                            together and how.
+                        </p>
+                    </div>
+                </div>
+                <h3>Services and funding opportunities</h3>
+                <div class="comparison-row">
+                    <div class="comparison-column">
+                        <img class="grid-item" src="images/niu/finance-old.png" alt="Old version">
+                        <p class="comparison-text">
+                            In the old version, if the user wanted to check what kind of funding option they could have,
+                            they had to choose from two
+                            drop-down menus, and only after that could they see the funding options they could go for.
+                            As a user, you had to choose
+                            from both drop down menus, if you chose your preference from only one, there was no listing
+                            of available funding. So,
+                            for example, if you were looking for financial support for start-ups, only after selecting
+                            from the second drop-down box
+                            could you see that you were in the implementation phase. </p>
+                    </div>
+                    <div class="comparison-column">
+                        <img class="grid-item" src="images/niu/finance-new.png" alt="New version">
+                        <p class="comparison-text">
+                            In the new version, we went for a visual approach: by default, you could see all the
+                            available support options, and the
+                            size and opacity showed the probability that the option would be good for the user. (On the
+                            right, the user can filter
+                            in a visual and entertaining way. Again, we got rid of the pop-ups and used the same method
+                            as for the actors above:
+                            when you click on an element, it gets bigger and shows the details and a link that takes the
+                            user to the right website.
+                        </p>
+                    </div>
+                </div>
+                <h3>Ecosystem</h3>
+                <div class="comparison-row">
+                    <div class="comparison-column">
+                        <img class="grid-item" src="images/niu/ecosystem-old.png" alt="Old version">
+                        <p class="comparison-text">In the old version, the user could not see the whole ecosystem at
+                            once, which made it quite
+                            difficult to remember which
+                            column represented what. To get more information about a device, the user had to click on it
+                            and a pop-up would appear
+                            on the screen, as usual. So the same problems occurred as mentioned above. </p>
+                    </div>
+                    <div class="comparison-column">
+                        <img class="grid-item" src="images/niu/ecosystem-new.png" alt="New version">
+                        <p class="comparison-text">
+                            In the new version, we tried to create an interactive screen to explore the ecosystem. There
+                            is no need to scroll, you
+                            can see everything on the screen and with the navigation on the left it is easy to find your
+                            way around. To see how it
+                            works, we suggest you watch the video below. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Deliverables Section -->
+
+    <section id="project" class="section">
+        <h2>Final Deliverables</h2>
+        <p class="text-content-center">To showcase the interactions, we created a short presentation video that walks
+            through the entire redesigned ecosystem
+            map. If you’re unable to play the video here, you can watch it on YouTube using the following link: <a
+                href="https://www.youtube.com/watch?v=53FYSe27rzI">Watch here!</a></p>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/53FYSe27rzI?modestbranding=1&showinfo=0
+" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 My Portfolio</p>
+    </footer>
+    <script src="/scripts.js" defer></script>
+</body>
+
+</html>

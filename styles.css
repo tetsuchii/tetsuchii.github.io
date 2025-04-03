@@ -339,7 +339,7 @@ footer {
 }
 
 @keyframes blobShape {
-      0% {
+    0% {
         border-radius: 50%;
     }
     25% {
@@ -543,25 +543,36 @@ footer {
     margin-bottom: 0px;
 }
 
+.comparison-text{
+    text-align: left;
+    margin: 4vh 0;
+}
 
-.image-grid {
-    margin-top: 40px;
-    width: 100%;
+.comparison-grid {
     display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.comparison-row {
+    display: flex;
+    gap: 20px;
     justify-content: center;
-    gap: 20px; /* Space between images */
+    width: 100%;
+}
+
+.comparison-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 300px;
 }
 
 .grid-item {
-
-    overflow: hidden;
-    border-radius: 10px; /* Optional: Rounded corners */
-}
-
-.grid-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures image fills the square */
+    max-width: 100%;
+    height: auto;
 }
 
 /*Table*/
@@ -823,14 +834,14 @@ td a:hover {
 
 
     .image-grid {
-            flex-direction: column;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+    }
 
-        .design-process img{
-            width: 100%;
-        }
+    .design-process img{
+        width: 100%;
+    }
 
     
     /*Table*/
@@ -880,6 +891,15 @@ td a:hover {
     td:nth-of-type(4)::before { content: "Tools"; }
     td:nth-of-type(5)::before { content: "Duration"; }
     td:nth-of-type(6)::before { content: "Other info"; }
+
+
+       .comparison-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .comparison-column {
+        width: 100%;
+    }
 
 }
 
