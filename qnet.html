@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-net web makeover</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="fixed-nav">
+        <div class="nav-container">
+            <button class="hamburger" id="hamburger-btn">&#9776;</button> <!-- Hamburger Menu -->
+            <ul class="nav-links">
+                <li><a href="index.html#projects" data-aos="fade-up" data-aos-duration="1000">Projects</a></li>
+                <li><a href="index.html#about" data-aos="fade-up" data-aos-duration="1000">About</a></li>
+                <li><a href="index.html#contact" data-aos="fade-up" data-aos-duration="1000">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header id="header">
+        <h1>Q-net</h1>
+        <p>Redesign of a queue management company's website after several years.</p>
+    </header>
+
+    <!-- Index image -->
+    <section id="project" class="section ">
+        <div class="project-image">
+            <img src="/images/q-net/mockup.png" alt="Project Title Image">
+        </div>
+    </section>
+
+    <!-- Project info -->
+    <section id="project" class="section">
+        <div class="project-info">
+            <h2>About the Project</h2>
+            <p>
+                The topic of my thesis was the use of pose detection with ML Kit (Google’s Machine Learning Kit), which
+                recognizes 33
+                key points on the human body. I needed a concept that could utilize this functionality, allowing me to
+                evaluate its
+                usability, complexity, and limitations. I experimented with different logical approaches to recognizing
+                poses, but
+                ultimately, classification proved to be the most effective solution. Exploring this method allowed me to
+                deepen my
+                understanding of the topic, which I found particularly engaging.
+            </p>
+        </div>
+    </section>
+
+    <!-- Table of infos -->
+    <section id="project" class="section">
+        <table>
+            <tr>
+                <th>Project type</th>
+                <th>Role</th>
+                <th>Industry</th>
+                <th>Tools</th>
+                <th>Duration</th>
+                <th>Other info</th>
+            </tr>
+            <tr>
+                <td>
+                    Native Android application development
+                </td>
+                <td>
+                    Developer
+                </td>
+                <td>
+                    Healthcare, wellness tech
+                </td>
+                <td>
+                    ML Kit Pose detection, CameraX, MediaPipe Pose Classification, Kotlin in IntelliJ, Python in Jupyter
+                    notebook, Room, SQLite, Firebase Authentication, Cloud Firestore
+                </td>
+                <td>February 2022 – December 2022</td>
+                <td>
+                    It was my BSc thesis and diploma project at the Budapest University of Technology and Economics.
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="project" class="section">
+        <div class="left-title-boxes">
+            <h2>The Problem</h2>
+            <div>
+                <p>
+                    Many people prefer working out at home for various reasons, but a common challenge—especially with
+                    yoga—is the lack of a
+                    professional supervisor to provide guidance, improve technique, and help prevent injuries.
+                </p>
+            </div>
+        </div>
+        <blockquote class="citate">How might we create an application that provides users with personalized, safe, and
+            effective yoga
+            practice by
+            leveraging AI supervision to ensure correct form and reduce the risk of injury?</blockquote>
+        <hr class="divider">
+    </section>
+
+    <!-- Wireframes Section -->
+    <section id="project" class="section">
+        <div class="text-content-center">
+            <h2>Considerations</h2>
+            <p class="text-content-center">During the development, I took into account various factors to ensure the
+                application would be accessible and usable by
+                a wide range of people worldwide. My test device ran the minimum Android version required for Google ML
+                Kit, so I made
+                sure the application would work seamlessly across all currently used Android versions, and even those
+                lower than the
+                most recent ones. Today, less than 3% of Android users globally are still on Android 7 or earlier, yet
+                my application
+                runs smoothly on Android 5, which demonstrates its broad compatibility and reliability.
+                <br>
+            <div class="design-process">
+                <img src="images/trAIner/android-statistic.png" alt="Wiring plan">
+            </div>
+            <p><a href="https://gs.statcounter.com/android-version-market-share"><i>Source</i></a></p>
+            <br>
+            <p class="text-content-center">
+                To enhance safety, users are required to log in to save their personal settings, such as whether they
+                are currently
+                injured or pregnant. This information helps tailor the yoga experience to their specific needs, as
+                certain poses may not
+                be recommended or feasible for them due to their condition. While this isn't a perfect solution, it
+                reflects a
+                thoughtful approach to user safety and demonstrates the effort to create a positive and secure user
+                experience. Once the
+                settings are saved, and the user returns to the list of yoga poses, only the poses that are considered
+                safe for their
+                condition will be available.
+            </p>
+            <br>
+            <div class="design-process">
+                <img class="smaller" src="images/trAIner/injuries-settings-mockup.png" alt="Wiring plan">
+            </div>
+        </div>
+    </section>
+
+    <!-- Wireframes Section -->
+    <section id="project" class="section">
+        <div class="text-content-center">
+            <h2>User flow</h2>
+            <p class="text-content-center">The user flow in this project was intentionally kept simple, as the primary
+                focus was on logistics, mathematics, and
+                development. However, it’s still important to showcase how the user interacts with the system, which is
+                illustrated
+                below. After selecting a yoga pose, the user can choose between two modes: Learn and Practice. In Learn
+                mode, the user
+                receives immediate feedback—a like symbol—when the pose is performed correctly. In Practice mode, once
+                the correct
+                position is achieved, a timer starts to track how long the user can maintain the pose accurately.</p>
+            <div class="design-process">
+                <img src="images/trAIner/userflow.png" alt="3D model of the prototype">
+            </div>
+            <p class="text-content-center">The planned user flow looked like this after development. These are the
+                screens following each other. The user interface
+                wasn’t a priority for this project, and
+                unfortunately, even though I wanted to create something more polished, I simply didn’t have the time.
+            </p>
+            <div class="design-process">
+                <img src="images/trAIner/userflow-screens.png" alt="3D model of the prototype">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Wireframes Section -->
+    <section id="project" class="section">
+        <div class="text-content-center">
+            <h2>Impact</h2>
+            <p class="text-content-center">There are so many incredible third-party services that can enhance
+                applications, and with the power of
+                machine learning,
+                we’re now able to solve problems that were once impossible. When I worked on this project (February 2022
+                - December
+                2022), technologies like ChatGPT hadn’t yet emerged, and image generation was still in its early stages.
+                This highlights
+                just how rapidly this field is evolving. If such advancements were possible back then, imagine what we
+                could achieve
+                today. With a bit more development, this application could become the next "Duolingo" for workouts and
+                yoga, offering a
+                safe, accessible, and free way for people to work out from home, on their own time.
+        </div>
+    </section>
+
+    <!-- Final Deliverables Section -->
+
+    <section id="project" class="section">
+        <h2>Final Deliverables</h2>
+        <p class="text-content-center">The final prototype of the robot is shown below. It was cut out of PVC sheets and
+            fixed with screws. The angle of the
+            distance sensors can be changed by inserting a screwdriver into the front centre hole of the robot. (This is
+            useful if
+            the opposing robot is shorter).</p>
+
+        <div class="image-grid-3">
+            <img class="image-grid-item" src="images/trAIner/mockup1.png" alt="Built robot 1">
+            <img class="image-grid-item" src="images/trAIner/mockup2.png" alt="Built robot 2">
+            <img class="image-grid-item" src="images/trAIner/mockup3.png" alt="Built robot 3">
+        </div>
+    </section>
+
+    <section id="project" class="section">
+        <div class="text-content-center">
+            <h2>Take away</h2>
+            <p class="text-content-center">
+                This project was my diploma thesis for a Computer Engineering BSc. Through this experience, I realized
+                how
+                much I would
+                prefer to focus more on planning and design rather than development. Due to time constraints and the
+                focus
+                on
+                functionality, there wasn't much opportunity to create a polished and user-friendly UI. The primary
+                challenge was
+                addressing the issue of supervision, which ultimately was solved, but the available functions were
+                already
+                stretched to
+                their limits.</p>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Nina Törő. All Rights Reserved</p>
+    </footer>
+    <script src="/scripts.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+</body>
+
+</html>
