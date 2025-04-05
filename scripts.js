@@ -1,30 +1,34 @@
+const circle = document.getElementById("circle");
+
 // Initialize AOS (Animations on Scroll)
 AOS.init({
   easing: "ease-in-out-sine",
   once: true, // ensures the animation happens only once when scrolling
 });
 
-// Smooth scroll and transform circle on click
-document.getElementById("circle").addEventListener("click", function () {
-  // Change the background color of the projects section immediately
-  // Scroll to the Projects section after the transition starts
-  document.getElementById("projects").removeAttribute("data-aos");
+if (circle) {
+  // Smooth scroll and transform circle on click
+  document.getElementById("circle").addEventListener("click", function () {
+    // Change the background color of the projects section immediately
+    // Scroll to the Projects section after the transition starts
+    document.getElementById("projects").removeAttribute("data-aos");
 
-  setTimeout(() => {
-    document.getElementById("projects").scrollIntoView({
-      behavior: "smooth",
-    });
-  }, 500); // Delay scrolling to let the circle scale up first
+    setTimeout(() => {
+      document.getElementById("projects").scrollIntoView({
+        behavior: "smooth",
+      });
+    }, 500); // Delay scrolling to let the circle scale up first
 
-  // Reset animation after the circle has been scaled up
-  setTimeout(() => {
-    // Reset the pulsing circle's size and animation
-    this.style.transition = "transform 0.5s ease"; // Ensure smooth transition back to normal
-    this.style.transform = "scale(1)"; // Reset scale back to normal
-    this.style.animation =
-      "blobMotion 2s infinite ease-in-out alternate, blobShape 3s infinite ease-in-out alternate"; // Restart the pulse animation
-  }, 1500); // Delay before the circle returns to normal size
-});
+    // Reset animation after the circle has been scaled up
+    setTimeout(() => {
+      // Reset the pulsing circle's size and animation
+      this.style.transition = "transform 0.5s ease"; // Ensure smooth transition back to normal
+      this.style.transform = "scale(1)"; // Reset scale back to normal
+      this.style.animation =
+        "blobMotion 2s infinite ease-in-out alternate, blobShape 3s infinite ease-in-out alternate"; // Restart the pulse animation
+    }, 1500); // Delay before the circle returns to normal size
+  });
+}
 
 function equalizeCardHeights() {
   const cards = document.querySelectorAll(".project");

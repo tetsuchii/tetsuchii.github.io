@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sumo Robot</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -204,32 +206,53 @@
                 </td>
                 <td>Simple DC motors</td>
                 <td>
-                    Laser-cut PVC sheet
+                    It was made with laser-cut PVC sheet
                 </td>
             </tr>
         </table>
+    </section>
+
+    <section id="project" class="section">
+        <h2>Strategy</h2>
+        <p class="text-content-center">
+            I did some secondary research on best practices for sumo robot strategy. It helped me a lot to find my own
+            way of
+            programming my robot. The strategy I came up with was the following:
+        <ol class="text-content-center">
+            <li>Spin around slowly to find the target.</li>
+            <li>Go full speed to push the target out of the ring.</li>
+            <li>If end of the ring (white border) detected go backwards and turn to a random direction a random amount.
+            </li>
+            <li>Start again.</li>
+        </ol>
+        </p>
+        </div>
     </section>
 
     <!-- Final Deliverables Section -->
 
     <section id="project" class="section">
         <h2>Final Deliverables</h2>
-        <p class="text-content-center">To showcase the interactions, we created a short presentation video that walks
-            through the entire redesigned ecosystem
-            map. If you’re unable to play the video here, you can watch it on YouTube using the following link: <a
-                href="https://www.youtube.com/watch?v=53FYSe27rzI">Watch here!</a></p>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/53FYSe27rzI?modestbranding=1&showinfo=0
-" frameborder="0" allowfullscreen></iframe>
+        <p class="text-content-center">The final prototype of the robot is shown below. It was cut out of PVC sheets and
+            fixed with screws. The angle of the
+            distance sensors can be changed by inserting a screwdriver into the front centre hole of the robot. (This is
+            useful if
+            the opposing robot is shorter).</p>
+
+        <div class="image-grid-3">
+            <img class="image-grid-item" src="images/sumorobot/robot-real1.png" alt="Built robot 1">
+            <img class="image-grid-item" src="images/sumorobot/robot-real2.png" alt="Built robot 2">
+            <img class="image-grid-item" src="images/sumorobot/robot-real3.png" alt="Built robot 3">
         </div>
     </section>
 
 
 
     <footer>
-        <p>&copy; 2025 My Portfolio</p>
+        <p>&copy; 2025 Nina Törő. All Rights Reserved</p>
     </footer>
     <script src="/scripts.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </body>
 
 </html>

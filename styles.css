@@ -198,6 +198,10 @@ header p {
     margin: 0 auto;
 }
 
+ol li{
+    text-align: left;
+}
+
 /* Projects Section */
 #projects {
     margin: 0 auto;
@@ -575,6 +579,20 @@ footer {
     height: auto;
 }
 
+.image-grid-3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 10px;
+}
+
+.image-grid-item {
+  flex: 1 1 calc(33.33% - 16px);
+  max-width: calc(33.33% - 16px);
+  height: auto;
+}
+
 /*Table*/
 table {
     width: 80%; /* Make the table take full width */
@@ -823,7 +841,7 @@ td a:hover {
     .project-info p, .left-title-boxes ul {
         max-width: 600px; /* Ensures both paragraphs have the same width */
         width: 100%; /* Prevents shrinking */
-        text-align: center;
+        text-align: left;
         margin-top: 10px;
     }
 
@@ -842,6 +860,11 @@ td a:hover {
     .design-process img{
         width: 100%;
     }
+
+    .image-grid-item {
+    flex: 1 1 calc(50% - 16px);
+    max-width: calc(50% - 16px);
+  }
 
     
     /*Table*/
@@ -907,7 +930,17 @@ td a:hover {
 /* Further responsiveness for very small screens (e.g., phones) */
 @media (max-width: 480px) {
 
+    .text-content-center{
+        text-align: left;
+    }
 
+    .section{
+        padding: 2vh;
+    }
+
+    .section img{
+        padding: 0vh;
+    }
      .circle-standard {
         width: 100%;  /* One item per row on small screens */
     }
@@ -932,4 +965,9 @@ td a:hover {
         font-size: 0.8em; /* Even smaller tag size */
         padding: 4px 8px; /* Adjust tag padding further */
     }
+
+    .image-grid-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
