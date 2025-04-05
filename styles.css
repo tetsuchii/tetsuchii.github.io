@@ -930,7 +930,7 @@ td a:hover {
 /* Further responsiveness for very small screens (e.g., phones) */
 @media (max-width: 480px) {
 
-    .text-content-center{
+    .text-content-center p{
         text-align: left;
     }
 
