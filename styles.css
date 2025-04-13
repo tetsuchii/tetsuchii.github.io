@@ -630,7 +630,7 @@ td a:hover {
 
 .circle-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 20px;
     margin: 20px;
     padding-top: 20px;
@@ -645,6 +645,10 @@ td a:hover {
     text-align: center;
     width: 20%;
     margin-bottom: 20px;
+}
+
+.circle-bigger{
+    width: 40%;
 }
 
 .circle-image {

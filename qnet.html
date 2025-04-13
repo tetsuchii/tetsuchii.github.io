@@ -168,6 +168,18 @@
     <!-- Wireframes Section -->
     <section id="project" class="section">
         <div class="text-content-center">
+            <h2>Design process</h2>
+            <p class="text-content-center">For this project, I followed the design process I learned in my Google UX
+                course, which I had just completed before
+                starting the work.</p>
+            <img style="  filter: grayscale(100%);" src="images/q-net/design-thinking-process.webp">
+
+        </div>
+    </section>
+
+    <!-- Wireframes Section -->
+    <section id="project" class="section">
+        <div class="text-content-center">
             <h2>Research</h2>
             <p class="text-content-center">I began the project by conducting interviews with key stakeholders within the
                 company to better understand their goals
@@ -178,14 +190,162 @@
                 they structure their contact pages and how they present their services and products, as these elements
                 were particularly
                 important for creating a user-friendly and trustworthy online presence.</p>
-            <div class="design-process">
-                <img src="images/trAIner/userflow.png" alt="3D model of the prototype">
-            </div>
-            <p class="text-content-center">
+            <h3>Key insights from competitor analysis:</h3>
+            <p><i>Competitors analyzed: Q-net, Sedco, Wavetec, Qmatic, Akis</i>
             </p>
-            <div class="design-process">
-                <img src="images/trAIner/userflow-screens.png" alt="3D model of the prototype">
+            <div class="circle-container">
+                <div class="circle-standard circle-bigger">
+                    <div class="circle-image"
+                        style="background-image: url('/images/q-net/Color\ Palette.svg'); border-radius: 0%;"></div>
+                    <div class="circle-label">Brand Identity & Visual Design</div>
+                    <div class="circle-description">
+                        <ul>
+                            <li>Strong brand identity is a standout advantage for companies like Qmatic and Sedco, using
+                                consistent fonts, colors, and
+                                motion.</li>
+                            <li>Q-net (especially q-net.com) lacks a clear and recognizable brand identity, and the
+                                design feels dense and overwhelming.</li>
+                            <li>Visual clarity and consistency help Qmatic stand out, while Akis and Wavetec still
+                                struggle with menu complexity and
+                                inconsistent color usage.</li>
+                        </ul>
+                        <p class="circle-label">Conclusion: Establish a more cohesive brand image using a unique
+                            color palette and
+                            improved visual hierarchy. </p>
+                    </div>
+                </div>
+                <div class="circle-standard circle-bigger">
+                    <div class="circle-image" style="background-image: url('/images/q-net/Compass.svg');"></div>
+                    <div class="circle-label">User Experience (UX) & Navigation</div>
+                    <div class="circle-description">
+                        <ul>
+                            <li>Most competitors have strong navigation systems, with clear indication of clickable
+                                elements (Qmatic, Sedco, Wavetec).</li>
+                            <li>Q-net’s website (especially q-net.com) has difficult navigation and a dense layout that
+                                can be confusing.</li>
+                            <li>Information architecture and menu structure are areas where several competitors
+                                (including Akis and even Qmatic)
+                                struggle.</li>
+                        </ul>
+                        <p class="circle-label">Conclusion: Simplify the menu, use progressive disclosure for complex
+                            content, and
+                            clearly distinguish CTAs (calls to action).</p>
+                    </div>
+                </div>
+                <div class="circle-standard circle-bigger">
+                    <div class="circle-image" style="background-image: url('/images/q-net/Globe.svg');"></div>
+                    <div class="circle-label">Content Strategy & Accessibility</div>
+                    <div class="circle-description">
+                        <ul>
+                            <li>Content strength (like blogs, FAQs, and customer stories) is high for Sedco, Wavetec,
+                                and Qmatic, adding credibility and
+                                SEO value.</li>
+                            <li>Q-net lacks updated or engaging content, and the language accessibility is weak, with
+                                exclusionary flag icons and no
+                                real multilingual support.</li>
+                            <li>Accessibility tools (e.g., font size changer) are attempted but poorly executed by many.
+                            </li>
+                        </ul>
+                        <p class="circle-label">Conclusion: Improve multilingual support and develop educational or
+                            value-driven
+                            content (like tutorials or use cases) for Q-net.</p>
+                    </div>
+                </div>
+                <div class="circle-standard circle-bigger">
+                    <div class="circle-image"
+                        style="background-image: url('/images/q-net/mobile.svg'); border-radius: 0%;">
+                    </div>
+                    <div class="circle-label">Mobile Experience</div>
+                    <div class="circle-description">
+                        <ul>
+                            <li>Mobile responsiveness is generally good across competitors, but tablet mode often causes
+                                issues (especially for Wavetec
+                                and Akis).</li>
+                            <li>Q-net’s mobile site works okay but suffers from harsh menu colors and dense layouts.
+                            </li>
+                        </ul>
+                        <p class="circle-label">Conclusion: Polish mobile layouts, especially for navigation and CTAs,
+                            to improve
+                            usability on all devices.</p>
+                    </div>
+                </div>
             </div>
+            <p class="text-content-center">After identifying key opportunities for Q-net based on competitor insights, I
+                shifted focus to analyzing
+                the existing
+                website. This step was crucial before planning the new information architecture. I found that many
+                outdated products
+                were still listed—some of which were no longer in production. As I dug deeper into user pain points, it
+                became
+                increasingly clear that a complete restructuring of the site's information architecture was necessary to
+                improve
+                clarity, usability, and content relevance.</p>
+            <h3>Identified pain points:</h3>
+            <div class="circle-container">
+                <div class="circle-standard">
+                    <div class="circle-image"
+                        style="background-image: url('/images/q-net/Question.svg'); border-radius: 0%;">
+                    </div>
+                    <div class="circle-label">Not clear concepts</div>
+                    <div class="circle-description">
+                        <ul>
+                            <li>Hard to understand what queue management is or why it’s useful.
+                            </li>
+                            <li>Needs clearer
+                                explanation.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="circle-standard">
+                    <div class="circle-image" style="background-image: url('/images/q-net/Label.svg');"></div>
+                    <div class="circle-label">Wrong wording</div>
+                    <div class="circle-description">
+                        <ul>
+                            <li>Product group names are too specific — should be more universal and use-case
+                                independent.
+                            </li>
+                            <li>E.g. “banknote validators” are used beyond banks, so labels should be more universal.
+                            </li>
+
+                    </div>
+                </div>
+                <div class="circle-standard">
+                    <div class="circle-image" style="background-image: url('/images/q-net/ban.svg');"></div>
+                    <div class="circle-label">Missing CTA</div>
+                    <div class="circle-description">
+                        <ul>
+                            <li>No clear call to action.
+                            </li>
+                            <li>Contact menu is hard to find, resulting in very few incoming
+                                inquiries.
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="circle-standard">
+                    <div class="circle-image"
+                        style="background-image: url('/images/q-net/menu.svg'); border-radius: 0%;">
+                    </div>
+                    <div class="circle-label">Crowded menu</div>
+                    <div class="circle-description">
+                        <ul>
+                            <li>Menu is overly crowded.
+                            </li>
+                            <li>Dropdown is too large and unorganized, making it nearly
+                                unusable on mobile.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <h3>Information architecture:</h3>
+            <p class="text-content-center"> To develop a clearer and more effective information architecture, I worked
+                closely with the sales team and the head of
+                development through a series of workshops and collaborative sessions.
+                This process helped us uncover key challenges and requirements, allowing us to create a structure that
+                aligns with both
+                user needs and business objectives.</p>
+            <img src="/images/q-net/info-architect.png">
         </div>
     </section>
 
@@ -193,19 +353,70 @@
     <!-- Wireframes Section -->
     <section id="project" class="section">
         <div class="text-content-center">
-            <h2>Impact</h2>
-            <p class="text-content-center">There are so many incredible third-party services that can enhance
-                applications, and with the power of
-                machine learning,
-                we’re now able to solve problems that were once impossible. When I worked on this project (February 2022
-                - December
-                2022), technologies like ChatGPT hadn’t yet emerged, and image generation was still in its early stages.
-                This highlights
-                just how rapidly this field is evolving. If such advancements were possible back then, imagine what we
-                could achieve
-                today. With a bit more development, this application could become the next "Duolingo" for workouts and
-                yoga, offering a
-                safe, accessible, and free way for people to work out from home, on their own time.
+            <h2>Wireframes</h2>
+            <p class="text-content-center">Collaboration with the sales team was crucial throughout the entire project.
+                We held multiple meetings during the wireframing and mockup phases, and I conducted several usability
+                tests on both
+                low-fidelity and high-fidelity prototypes. The feedback I received was incredibly valuable and
+                highlighted areas where I
+                still have room to grow, especially since this was my first real project after completing my Google UX
+                course. I’d love
+                to share the key insights gained from these usability tests below.
+            </p>
+            <p class="text-content-center">
+                The usability study was conducted in two rounds.
+                The first round focused solely on the website, while the second round included both the mobile site and
+                the updated
+                version. Finding participants who met the desired criteria proved challenging, so the study became more
+                of a “what if”
+                and role-playing scenario. Despite this, all participants gave their best effort, and we gathered
+                valuable and
+                insightful feedback.
+            </p>
+        </div>
+        <h3>Usability findings:</h3>
+        <div class="circle-container">
+            <div class="circle-standard">
+                <div class="circle-image"
+                    style="background-image: url('/images/q-net/Question.svg'); border-radius: 0%;">
+                </div>
+                <div class="circle-label">Too much text in the feature part of the Pro.</div>
+                <div class="circle-description">
+                    <ul>
+                        <li>Hard to understand what queue management is or why it’s useful.
+                        </li>
+                        <li>Needs clearer
+                            explanation.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="circle-standard">
+                <div class="circle-image" style="background-image: url('/images/q-net/Label.svg');"></div>
+                <div class="circle-label">Creating a flipbox</div>
+                <div class="circle-description">
+                    <ul>
+                        <li>Product group names are too specific — should be more universal and use-case
+                            independent.
+                        </li>
+                        <li>E.g. “banknote validators” are used beyond banks, so labels should be more universal.
+                        </li>
+
+                </div>
+            </div>
+            <div class="circle-standard">
+                <div class="circle-image" style="background-image: url('/images/q-net/ban.svg');"></div>
+                <div class="circle-label">Unrecognizable clickable element</div>
+                <div class="circle-description">
+                    <ul>
+                        <li>No clear call to action.
+                        </li>
+                        <li>Contact menu is hard to find, resulting in very few incoming
+                            inquiries.
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
         </div>
     </section>
 
