@@ -517,6 +517,10 @@ footer {
     margin-bottom: 40px;
 }
 
+.text-content-center p{
+    text-align: left;
+}
+
 .left-title-boxes {
     display: flex;
     flex-direction: row-reverse;
