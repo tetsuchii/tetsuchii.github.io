@@ -1,128 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Manifesto</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
 
-    <style>
-      /* Page-specific styles matching your aesthetic */
-      .page-wrapper {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 6rem 1.5rem 8rem;
-        color: inherit;
-      }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manifesto – Nina Törő</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
 
-      h1.manifesto-title {
-        font-family: "Georgia", serif;
-        font-size: 3rem;
-        font-weight: 400;
-        line-height: 1.2;
-        margin-bottom: 3rem;
-        text-align: center;
-      }
-
-      .manifesto-block {
-        max-width: 760px;
-        margin: 0 auto;
-        font-size: 1.2rem;
-        line-height: 1.55;
-        animation: fadeIn 1s ease-out forwards;
-        opacity: 0;
-      }
-
-      .manifesto-block p {
-        margin-bottom: 2rem;
-      }
-
-      .manifesto-block strong {
-        display: block;
-        font-family: "Helvetica Neue", Arial, sans-serif;
-        font-weight: 600;
-        margin-bottom: 0.25rem;
-      }
-
-      @media (prefers-color-scheme: dark) {
-        .manifesto-block strong {
-          color: #fff;
-        }
-      }
-
-      @keyframes fadeIn {
-        to {
-          opacity: 1;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- HEADER -->
+<body>
+    <!-- Navigation -->
     <nav class="fixed-nav">
-      <div class="nav-container">
-        <button class="hamburger" id="hamburger-btn">&#9776;</button>
-        <!-- Hamburger Menu -->
-        <ul class="nav-links">
-          <li>
-            <a
-              href="index.html#projects"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              >Projects</a
-            >
-          </li>
-          <li>
-            <a
-              href="index.html#about"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              >About</a
-            >
-          </li>
-          <li>
-            <a
-              href="index.html#contact"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              >Contact</a
-            >
-          </li>
-        </ul>
-      </div>
+        <div class="nav-container">
+            <button class="hamburger" id="hamburger-btn">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="index.html#projects" data-aos="fade-up" data-aos-duration="1000">Projects</a></li>
+                <li><a href="index.html#about" data-aos="fade-up" data-aos-duration="1000">About</a></li>
+                <li><a href="index.html#contact" data-aos="fade-up" data-aos-duration="1000">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <main class="page-wrapper">
-      <h1 class="manifesto-title">My UX Designer Manifesto</h1>
+    <!-- Header -->
+    <header id="header">
+        <h1>Design Manifesto</h1>
+    </header>
 
-      <div class="manifesto-block">
-        <p>1. I design to make complex systems understandable.</p>
-        <p>2. I create clarity through structure, intention, and reduction.</p>
-        <p>3. I treat technology as a medium for learning — not noise.</p>
-        <p>4. I design experiences that are human, and responsible.</p>
-        <p>5. I prototype early to learn, not to prove.</p>
-        <p>6. I design beyond screens, exploring physical context.</p>
-        <p>7. I value transparency, accessibility, and long-term usefulness.</p>
-        <p>8. I teach by simplifying without dumbing down.</p>
-        <p>9. I design with curiosity, evidence, and empathy.</p>
-        <p>10. I build experiences that help people feel more capable.</p>
-      </div>
-    </main>
+    <!-- Manifesto Section -->
+    <section id="project" class="section">
+        <div class="project-info" data-aos="fade-up" data-aos-duration="1000">
+            <h2>Introduction</h2>
+            <p>
+                I'm absolutely not a fan of manifestos. They often come across as rigid, dogmatic,
+                and disconnected from real-world practice. However, if I really have to do it, and this is the case right now, I think it would look like this:
+            </p>
+        </div>
+    </section>
 
-    <!-- FOOTER -->
+    <section id="project" class="section">
+        <div class="left-title-boxes" data-aos="fade-up">
+            <h2>My 10 points</h2>
+
+            <div class="manifesto-list">
+                <p>1. I design to make complex systems understandable.</p>
+                <p>2. I create clarity through structure, intention, and reduction.</p>
+                <p>3. I treat technology as a medium for learning.</p>
+                <p>4. I design experiences that are human, and responsible.</p>
+                <p>5. I prototype early to learn, not to prove.</p>
+                <p>6. I design beyond screens.</p>
+                <p>7. I value transparency, accessibility, and long-term usefulness.</p>
+                <p>8. I teach by simplifying without dumbing down.</p>
+                <p>9. I design with curiosity, evidence, and empathy.</p>
+                <p>10. I build experiences that help people feel more capable.</p>
+            </div>
+        </div>
+
+        <hr class="divider">
+    </section>
+
     <footer>
-      <p>&copy; 2025 Nina Toro</p>
+        <p>&copy; 2025 Nina Törő. All Rights Reserved</p>
     </footer>
+
     <script src="/scripts.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  </body>
+</body>
+
 </html>
