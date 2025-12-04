@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manifesto</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      /* Page-specific styles matching your aesthetic */
+      .page-wrapper {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 6rem 1.5rem 8rem;
+        color: inherit;
+      }
+
+      h1.manifesto-title {
+        font-family: "Georgia", serif;
+        font-size: 3rem;
+        font-weight: 400;
+        line-height: 1.2;
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+
+      .manifesto-block {
+        max-width: 760px;
+        margin: 0 auto;
+        font-size: 1.2rem;
+        line-height: 1.55;
+        animation: fadeIn 1s ease-out forwards;
+        opacity: 0;
+      }
+
+      .manifesto-block p {
+        margin-bottom: 2rem;
+      }
+
+      .manifesto-block strong {
+        display: block;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .manifesto-block strong {
+          color: #fff;
+        }
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="manifesto.html" class="active">Manifesto</a>
+      </nav>
+    </header>
+
+    <main class="page-wrapper">
+      <h1 class="manifesto-title">My UX Designer Manifesto</h1>
+
+      <div class="manifesto-block">
+        <p>1. I design to make complex systems understandable.</p>
+        <p>2. I create clarity through structure, intention, and reduction.</p>
+        <p>3. I treat technology as a medium for learning — not noise.</p>
+        <p>4. I design experiences that are human, and responsible.</p>
+        <p>5. I prototype early to learn, not to prove.</p>
+        <p>6. I design beyond screens, exploring physical context.</p>
+        <p>7. I value transparency, accessibility, and long-term usefulness.</p>
+        <p>8. I teach by simplifying without dumbing down.</p>
+        <p>9. I design with curiosity, evidence, and empathy.</p>
+        <p>10. I build experiences that help people feel more capable.</p>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>&copy; 2025 Nina Toro</p>
+    </footer>
+  </body>
+</html>
