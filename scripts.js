@@ -88,3 +88,79 @@ document.addEventListener("DOMContentLoaded", function () {
     letterN.classList.toggle("active");
   });
 });
+
+// ── Lightbox ─────────────────────────────────────────
+document.addEventListener("DOMContentLoaded", function () {
+  // Build overlay DOM
+  const overlay = document.createElement("div");
+  overlay.id = "lb-overlay";
+  overlay.setAttribute("role", "dialog");
+  overlay.setAttribute("aria-modal", "true");
+  overlay.setAttribute("aria-label", "Image preview");
+
+  const lbImg = document.createElement("img");
+  lbImg.id = "lb-img";
+
+  const closeBtn = document.createElement("button");
+  closeBtn.id = "lb-close";
+  closeBtn.setAttribute("aria-label", "Close");
+  closeBtn.textContent = "✕";
+
+  overlay.appendChild(lbImg);
+  overlay.appendChild(closeBtn);
+  document.body.appendChild(overlay);
+
+  let clearSrcTimer;
+
+  function openLightbox(src, alt) {
+    clearTimeout(clearSrcTimer);
+    lbImg.src = src;
+    lbImg.alt = alt || "";
+    overlay.classList.add("lb-open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeLightbox() {
+    overlay.classList.remove("lb-open");
+    document.body.style.overflow = "";
+    // Clear src after fade-out to free memory without a visible flash
+    clearSrcTimer = setTimeout(function () {
+      lbImg.src = "";
+    }, 200);
+  }
+
+  // Close when clicking the backdrop (not the image itself)
+  overlay.addEventListener("click", function (e) {
+    if (e.target === overlay) closeLightbox();
+  });
+
+  closeBtn.addEventListener("click", closeLightbox);
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && overlay.classList.contains("lb-open")) {
+      closeLightbox();
+    }
+  });
+
+  // Intercept image clicks in the capture phase so this runs before any
+  // inline onclick="window.location.href=..." handlers on the element.
+  // Calling stopPropagation() here prevents those handlers from firing.
+  document.addEventListener(
+    "click",
+    function (e) {
+      const img = e.target;
+      if (img.tagName !== "IMG") return;
+
+      // Exclusions: home-page card thumbnails and the profile photo
+      if (img.classList.contains("index-img")) return;
+      if (img.classList.contains("about-image")) return;
+
+      // Skip anything inside the nav
+      if (img.closest("nav")) return;
+
+      e.stopPropagation();
+      openLightbox(img.src, img.alt);
+    },
+    true // capture phase
+  );
+});
