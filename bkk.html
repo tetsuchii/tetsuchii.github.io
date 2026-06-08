@@ -1,0 +1,372 @@
+ <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BKK Pay&Go Validator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav class="fixed-nav">
+      <div class="nav-container">
+        <button class="hamburger" id="hamburger-btn">&#9776;</button>
+        <ul class="nav-links">
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+<header id="header">
+    <h1>BKK Pay&Go</h1>
+    <p>exploring text-free validation for public transportation</p>
+</header>
+
+<section id="project" class="section">
+    <div class="project-image">
+        <img src="/images/bkk/fekvo1_bkk.png" alt="BKK Pay&Go">
+    </div>
+</section>
+
+<section id="project" class="section">
+    <div class="project-info">
+        <h2>About the Project</h2>
+
+        <p>
+            Pay&Go is BKK's upcoming open-loop ticketing system, allowing passengers
+            to purchase and validate public transport tickets using contactless bank cards
+            and mobile wallets.
+        </p>
+
+        <p>
+            Working directly with BKK, our team explored whether ticket validators
+            could communicate entirely through visual language, eliminating the need
+            for written instructions and making the system more accessible for
+            international travellers.
+        </p>
+    </div>
+</section>
+
+<section id="project" class="section">
+    <table>
+        <tr>
+            <th>Project type</th>
+            <th>Role</th>
+            <th>Industry</th>
+            <th>Tools</th>
+            <th>Duration</th>
+            <th>Other info</th>
+        </tr>
+
+        <tr>
+            <td>UX Research, Interaction Design</td>
+            <td>UX/UI Designer</td>
+            <td>Public Transportation</td>
+            <td>Figma, FigJam</td>
+            <td>February 2025 - May 2025</td>
+            <td>
+                University collaboration with BKK.
+                Team members: Hajnal Mészáros, Liliána Bitó.
+            </td>
+        </tr>
+    </table>
+</section>
+
+<section id="project" class="section">
+
+    <div class="left-title-boxes">
+
+        <h2>The Challenge</h2>
+
+        <div>
+            <p>
+                Public transportation systems rely heavily on written instructions.
+                However, cities welcome millions of visitors every year who may not
+                understand the local language.
+            </p>
+
+            <ul>
+                <li>Validators must communicate quickly.</li>
+                <li>Passengers have limited attention.</li>
+                <li>Interactions happen in crowded environments.</li>
+                <li>Tourists often do not speak the local language.</li>
+                <li>Feedback must be understandable within seconds.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <blockquote class="citate">
+        "Can a ticket validator work without any text?"
+    </blockquote>
+    <div class="divider" ></div>
+</section>
+
+<section id="project" class="section">
+  <div class="text-content-center">
+    <h2>Research</h2>
+
+    <p>
+      To understand whether a validator could function without written
+      instructions, we first examined the current ticket validation experience
+      across Budapest's public transportation network. We documented existing
+      validator interfaces, printed information materials, ticket purchasing
+      instructions, and suburban fare explanations to better understand what
+      information passengers rely on during their journeys.
+    </p>
+
+    <p>
+      In parallel, we analyzed open-loop ticketing systems used in other
+      European cities to identify common interaction patterns and approaches to
+      communicating validation, payment, and fare information.
+    </p>
+
+    <img src="/images/bkk/exploration.png" style="cursor: pointer;" onclick="window.location.href='/images/bkk/exploration.png'" alt="Existing Systems Research" />
+
+    <h3>Mapping Information Needs</h3>
+
+    <p>
+      Based on our observations and findings, we mapped the information
+      passengers encounter throughout the validation process. Through
+      collaborative workshops, brainstorming sessions, and rapid ideation, we
+      explored which pieces of information are essential and how they might be
+      translated into a purely visual language.
+    </p>
+
+    <img src="/images/bkk/brainstorm.png" style="cursor: pointer;" onclick="window.location.href='/images/bkk/brainstorm.png'" alt="Brainstorming Session" />
+
+    <h3>Animation Exploration</h3>
+
+    <p>
+      One of our earliest concepts focused on using animations to guide
+      passengers through the validation process without relying on text. We
+      quickly sketched and tested several animated interactions to communicate
+      ticket purchases, validation states, and system feedback.
+    </p>
+
+    <p>
+      While participants generally understood the intended messages, testing
+      revealed that animations introduced unnecessary delays. Public transport
+      interactions happen within seconds, and users expected immediate feedback
+      rather than waiting for explanatory sequences to play out.
+    </p>
+
+    <img src="/images/bkk/animations.png" style="cursor: pointer;" onclick="window.location.href='/images/bkk/animations.png'" alt="Animation Concepts" />
+
+    <h3>Testing Existing Iconography</h3>
+
+    <p>
+      Since animations proved unsuitable for fast-paced validation scenarios,
+      we shifted our attention to static visual communication. We explored
+      whether BKK's existing iconography could effectively communicate validator
+      states and error situations without the support of written language.
+    </p>
+
+    <p>
+      Particular attention was given to error feedback, as failed validations
+      often occur in public settings where passengers may already feel rushed
+      or uncomfortable. We tested for example how to show validator isn't working.
+    </p>
+
+    <img src="/images/bkk/iconography_iteration1.png" alt="Iconography Testing" />
+     <img src="/images/bkk/iconography_iteration2.png" alt="Iconography Testing 2" />
+<p>
+      To evaluate the effectiveness of the visual language, we tested multiple
+      symbols and feedback states with users. Participants were asked to
+      interpret the meaning of different icons and describe the actions they
+      would take based on the feedback shown by the validator.
+    </p>
+
+    <p>
+      The results highlighted significant inconsistencies in interpretation.
+      Symbols that appeared obvious from a design perspective often conveyed
+      different meanings to different users, demonstrating the challenges of
+      creating a truly language-independent validation experience.
+    </p>
+
+    <img src="/images/bkk/testing.png" alt="Testing Process" />
+  </div>
+
+  <hr class="divider" />
+</section>
+
+<section id="project" class="section">
+    <h2>Key Findings</h2>
+
+    <p class="text-content-center">
+        Testing revealed several challenges when relying solely on visual communication.
+    </p>
+
+    <div class="circle-container">
+
+        <div class="circle-standard no-icon">
+            <div class="circle-label">
+                Animations Are Too Slow
+            </div>
+
+            <div class="circle-description">
+                Users needed immediate feedback. Even short animations delayed
+                understanding and slowed interactions.
+            </div>
+        </div>
+
+        <div class="circle-standard no-icon">
+            <div class="circle-label">
+                Public Errors Feel Uncomfortable
+            </div>
+
+            <div class="circle-description">
+                Error states such as insufficient balance created anxiety when
+                displayed publicly. Users preferred more discreet feedback.
+            </div>
+        </div>
+
+        <div class="circle-standard no-icon">
+            <div class="circle-label">
+                Existing Icons Lack Consistency
+            </div>
+
+            <div class="circle-description">
+                Many existing transportation symbols were interpreted differently
+                by different users, reducing clarity.
+            </div>
+        </div>
+
+        <div class="circle-standard no-icon">
+            <div class="circle-label">
+                Some Decisions Require More Context
+            </div>
+
+            <div class="circle-description">
+                Choosing between city, suburban, or combined travel proved
+                difficult to communicate through icons alone.
+            </div>
+        </div>
+
+    </div>
+
+    <blockquote class="citate">
+        "Visual communication can simplify validation, but not every transport decision can be reduced to a single symbol."
+    </blockquote>
+
+    <hr class="divider" />
+</section>
+
+<section id="project" class="section">
+
+    <h2>Main User Flows</h2>
+
+    <div class="circle-container">
+
+        <div class="circle-standard">
+            <div class="circle-image" style="
+              background-image: url(&quot;/images/bkk/ticket.png&quot;);
+              border-radius: 0%;
+              background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+            " onclick="window.location.href='images/bkk/ticket.png'"></div>
+            <div class="circle-label">Single Ticket Purchase</div>
+            <div class="circle-description">
+                Buying a ticket and receiving success or error feedback.
+            </div>
+        </div>
+
+        <div class="circle-standard">
+            <div class="circle-image" style="
+              background-image: url(&quot;/images/bkk/multiple-ticket.png&quot;);
+              background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+              border-radius: 0%; cursor: pointer;
+            " onclick="window.location.href='images/bkk/multiple-ticket.png'"></div>
+            <div class="circle-label">Multiple Tickets</div>
+            <div class="circle-description">
+                Purchasing tickets for several passengers using a single device.
+            </div>
+        </div>
+
+        <div class="circle-standard">
+            <div class="circle-image" style="
+              background-image: url(&quot;/images/bkk/suburbs.png&quot;);
+              border-radius: 0%; background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+            " onclick="window.location.href='images/bkk/suburbs.png'"></div>
+            <div class="circle-label">Suburban Travel</div>
+            <div class="circle-description">
+                Selecting travel zones for Budapest, suburban areas, or both.
+            </div>
+        </div>
+        <img src="/images/bkk/information_architecture.png" alt="Information architecture" style="margin-top: 20px; cursor: pointer;" onclick="window.location.href='/images/bkk/information_architecture.png'" />
+
+    </div>
+
+</section>
+
+
+
+<section id="project" class="section">
+
+    <div class="text-content-center">
+
+        <h2>Design Iterations</h2>
+
+        <p>
+            We tested multiple approaches including animated instructions,
+            sequential feedback systems, icon-based communication,
+            and simplified status indicators.
+        </p>
+        <p>
+            One of the main flows were the agglomeration selector screen, which had multiple iterations is shown below. Even with the last one users had difficulties, which highlighted the challenges of communicating complex information without text.
+        </p>
+
+        <img src="/images/bkk/agglo_iterations.png" alt="Iterations">
+
+    </div>
+
+</section>
+
+<section id="project" class="section">
+
+    <h2>Outcome</h2>
+
+    <div class="text-content-center">
+
+        <p>
+            While our research showed that many validator interactions can be
+            communicated visually, fully eliminating text introduces significant
+            challenges for more complex scenarios.
+        </p>
+
+        <p>
+            The project provided valuable insights into accessibility,
+            cross-cultural communication, and the limitations of iconography
+            in public transportation systems.
+        </p>
+
+    </div>
+
+</section>
+
+
+    <footer>
+      <p>&copy; 2026 Nina Törő. All Rights Reserved</p>
+    </footer>
+
+    <script src="/scripts.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  </body>
+</html>
