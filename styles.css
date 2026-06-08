@@ -18,6 +18,12 @@ img{
     height: auto;
 }
 
+.img-clickable {
+    margin-top: 20px;
+    max-width: 50%;
+    cursor: pointer;
+}
+
 body {
     font-family: Raleway, sans-serif;
     background-color: #000; /* Black background */
@@ -174,12 +180,20 @@ header p {
 }
 
 .section h3{
+    margin-top: 30px;
     margin-bottom: 20px;
     font-size: x-large;
 }
 
 .section p, .section ul{
     line-height: 1.5;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+p + img {
+    margin-top: 20px;
 }
 
 .ellipse {

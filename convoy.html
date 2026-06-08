@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mercedes Convoy Ecosystem</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav class="fixed-nav">
+      <div class="nav-container">
+        <button class="hamburger" id="hamburger-btn">&#9776;</button>
+        <ul class="nav-links">
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header id="header">
+      <h1>Mercedes Convoy</h1>
+      <p>designing shared experiences for multi-car journeys</p>
+    </header>
+
+    <section id="project" class="section">
+      <div class="project-image">
+        <img
+          src="/images/convoy/fekvo1-convoy.png"
+          alt="Mercedes Convoy Hero"
+        />
+      </div>
+    </section>
+
+    <section id="project" class="section">
+      <div class="project-info">
+        <h2>About the Project</h2>
+        <p>
+          Mercedes Convoy is a mobility concept designed to support groups
+          travelling together in multiple vehicles. While road trips are often
+          shared experiences, travellers become separated once distributed
+          across different cars, making communication, coordination, and
+          decision-making difficult.
+        </p>
+
+        <p>
+          The project explores how a connected ecosystem could help groups plan
+          routes, discover destinations, coordinate stops, and travel together
+          without sacrificing flexibility or independence.
+        </p>
+      </div>
+    </section>
+
+    <section id="project" class="section">
+      <table>
+        <tr>
+          <th>Project type</th>
+          <th>Role</th>
+          <th>Industry</th>
+          <th>Tools</th>
+          <th>Duration</th>
+          <th>Other info</th>
+        </tr>
+        <tr>
+          <td>UX/UI Design, Service Design</td>
+          <td>UX/UI Designer</td>
+          <td>Mobility</td>
+          <td>Figma, FigJam</td>
+          <td> February 2025 - May 2025</td>
+          
+            <td>
+                This project was part of the Mercedes – In-Car UX Design course, where we had the opportunity to consult with designers from Mercedes and receive feedback on our concept. My teammates were Hajnal Mészáros and Virág Tibenszki.
+        </tr>
+      </table>
+    </section>
+
+    <section id="project" class="section">
+      <div class="left-title-boxes">
+        <h2>The Challenge</h2>
+
+        <div>
+          <p>
+            Travelling together in multiple vehicles requires constant
+            coordination. Existing navigation tools help people reach
+            destinations, but they do not support the social aspects of
+            travelling together.
+          </p>
+
+          <ul>
+            <li>
+              Communication becomes fragmented across messaging apps and calls.
+            </li>
+            <li>Coordinating breaks and meeting points is difficult.</li>
+            <li>Passengers miss opportunities to contribute to the journey.</li>
+            <li>Groups struggle to make decisions while on the road.</li>
+            <li>Vehicles become isolated despite sharing the same trip.</li>
+          </ul>
+        </div>
+      </div>
+
+      <blockquote class="citate">
+        “How might we help people travelling in multiple cars still feel like
+        they are travelling together?”
+      </blockquote>
+
+      <hr class="divider" />
+    </section>
+
+    <!-- RESEARCH -->
+
+    <section id="project" class="section">
+      <div class="text-content-center">
+        <h2>Research</h2>
+
+        <p>
+          To better understand the challenges of travelling together in multiple
+          vehicles, we combined quantitative research, user modelling, journey
+          mapping, competitor analysis, and service design methods. This process
+          helped us identify recurring coordination challenges and uncover
+          opportunities for creating a more connected travel experience.
+        </p>
+
+        <h3>Survey</h3>
+
+        <p>
+          We began with a survey exploring travel habits, coordination
+          challenges, and expectations when travelling in multiple cars. The
+          results highlighted recurring frustrations around communication,
+          decision-making, and maintaining awareness of other convoy members.
+          (80 participants, mostly from Europe, with a mix of ages and travel
+          experiences)
+        </p>
+
+        <img src="/images/convoy/survey.png" alt="Survey Results" />
+
+        <h3>Personas</h3>
+
+        <p>
+          Based on the survey findings, we created nine personas representing
+          different travel behaviours, motivations, and responsibilities within
+          a convoy. These personas helped us understand the diverse needs of
+          drivers and passengers throughout the journey.
+        </p>
+
+        <img
+          src="/images/convoy/persona.png"
+          style="cursor: pointer"
+          onclick="window.location.href = '/images/convoy/persona.png'"
+          alt="Personas"
+        />
+
+        <h3>User Journey Map</h3>
+
+        <p>
+          Using the personas, we mapped the convoy experience from planning to
+          arrival. This allowed us to identify critical moments where
+          communication breaks down and coordination becomes difficult.
+        </p>
+
+        <img
+          src="/images/convoy/user journey map.png"
+          class="img-clickable"
+          onclick="window.location.href = '/images/convoy/user journey map.png'"
+          alt="User Journey Map"
+        />
+
+        <h3>Desktop Research & Value Proposition Canvas</h3>
+
+        <p>
+          In parallel, we analyzed existing travel planning and navigation
+          solutions to understand how current products support group travel. We
+          synthesized these findings using a Value Proposition Canvas to connect
+          user needs, frustrations, and opportunities for intervention.
+        </p>
+
+        <img
+          src="/images/convoy/value proposition canvas.png"
+          class="img-clickable"
+          onclick="
+            window.location.href = '/images/convoy/value proposition canvas.png'
+          "
+          alt="Value Proposition Canvas"
+        />
+      </div>
+
+      <hr class="divider" />
+    </section>
+
+    <!-- INSIGHTS -->
+
+    <section id="project" class="section">
+      <h2>Key Insights</h2>
+
+      <p class="text-content-center">
+        Our research revealed four recurring challenges that shape the convoy
+        travel experience.
+      </p>
+
+      <div class="circle-container">
+        <div class="circle-standard">
+          <div
+            class="circle-image"
+            style="
+              background-image: url(&quot;/images/convoy/communication.svg&quot;);
+              border-radius: 0%;
+            "
+          ></div>
+          <div class="circle-label">Fragmented Communication</div>
+          <div class="circle-description">
+            <ul>
+              <li>Information scattered across multiple channels.</li>
+              <li>Important decisions easily missed.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="circle-standard">
+          <div
+            class="circle-image"
+            style="
+              background-image: url(&quot;/images/convoy/decision.svg&quot;);
+            "
+          ></div>
+          <div class="circle-label">Difficult Decision-Making</div>
+          <div class="circle-description">
+            <ul>
+              <li>Choosing stops requires constant negotiation.</li>
+              <li>Drivers have limited attention while travelling.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="circle-standard">
+          <div
+            class="circle-image"
+            style="
+              background-image: url(&quot;/images/convoy/location.svg&quot;);
+              border-radius: 0%;
+            "
+          ></div>
+          <div class="circle-label">Lack of Awareness</div>
+          <div class="circle-description">
+            <ul>
+              <li>Limited visibility of convoy members.</li>
+              <li>Hard to know who is ahead or behind.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="circle-standard">
+          <div
+            class="circle-image"
+            style="
+              background-image: url(&quot;/images/convoy/experience.svg&quot;);
+              border-radius: 0%;
+            "
+          ></div>
+          <div class="circle-label">Lost Shared Experience</div>
+          <div class="circle-description">
+            <ul>
+              <li>Passengers become passive travellers.</li>
+              <li>The journey itself becomes secondary.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <blockquote class="citate">
+        "Travelling together should be about more than reaching the same
+        destination."
+      </blockquote>
+
+      <hr class="divider" />
+    </section>
+
+    <!-- DESIGN OPPORTUNITY -->
+
+    <section id="project" class="section">
+      <div class="text-content-center">
+        <h2>Design Opportunity</h2>
+
+        <p>
+          Our findings suggested that convoy travel is not primarily a
+          navigation problem. Instead, groups struggle with coordination,
+          participation, and maintaining a sense of togetherness while
+          physically separated across multiple vehicles.
+        </p>
+      </div>
+
+      <blockquote class="citate">
+        "How might we help people travelling in multiple cars still feel like
+        they are travelling together?"
+      </blockquote>
+
+      <hr class="divider" />
+    </section>
+
+    <section id="project" class="section">
+      <div class="text-content-center">
+        <h2>The Solution</h2>
+
+        <p>
+          Mercedes Convoy is a connected travel ecosystem that allows groups to
+          collaboratively shape their journey. Instead of focusing only on
+          navigation, the concept supports communication, participation,
+          discovery, and coordination throughout the trip.
+        </p>
+
+        <div class="circle-container">
+          <div class="circle-standard">
+            <div
+              class="circle-image"
+              style="
+                background-image: url(&quot;/images/convoy/route.png&quot;);
+              "
+            ></div>
+            <div class="circle-label">Shared Route Planning</div>
+            <div class="circle-description">
+              <ul>
+                <li>Create and manage journeys together.</li>
+                <li>Everyone has visibility over the route.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="circle-standard">
+            <div
+              class="circle-image"
+              style="
+                background-image: url(&quot;/images/convoy/voting.png&quot;);
+              "
+            ></div>
+            <div class="circle-label">Collective Decisions</div>
+            <div class="circle-description">
+              <ul>
+                <li>Suggest locations and activities.</li>
+                <li>Vote on stops and destinations.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="circle-standard">
+            <div
+              class="circle-image"
+              style="
+                background-image: url(&quot;/images/convoy/discovery.png&quot;);
+              "
+            ></div>
+            <div class="circle-label">Local Discovery</div>
+            <div class="circle-description">
+              <ul>
+                <li>Explore attractions along the route.</li>
+                <li>Find scenic and cultural experiences.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="circle-standard">
+            <div
+              class="circle-image"
+              style="
+                background-image: url(&quot;/images/convoy/dashboard.png&quot;);
+              "
+            ></div>
+            <div class="circle-label">Convoy Awareness</div>
+            <div class="circle-description">
+              <ul>
+                <li>Track convoy members in real time.</li>
+                <li>Coordinate charging and fuel stops.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider" />
+    </section>
+
+    <section id="project" class="section">
+      <div class="text-content-center">
+        <h2>User Flow</h2>
+
+        <p>
+          The experience was designed with option for the passengers to actively
+          participate in shaping the journey while allowing drivers to maintain
+          focus on the road. The user flow supports collaborative planning
+          before and during the trip and real-time coordination during the
+          journey.
+        </p>
+
+        <img
+          src="/images/convoy/user_flow.png"
+          alt="User Flow"
+          style="cursor: pointer"
+          onclick="window.location.href = '/images/convoy/user_flow.png'"
+        />
+      </div>
+    </section>
+
+    <section id="project" class="section">
+      <h2>Final Design</h2>
+<div class="text-content-center">
+      <p>
+        The final concept was designed as a connected ecosystem supporting
+        different participants throughout the journey. Rather than creating a
+        single interface, we developed three interconnected touchpoints tailored
+        to the needs and responsibilities of passengers and drivers.
+      </p>
+<br />
+</div>
+
+      <h3>Passenger Mobile Application</h3>
+<div class="text-content-center">
+      <p>
+        Passengers can actively contribute to the journey by suggesting
+        destinations, discovering nearby attractions, voting on stops, and
+        coordinating with other convoy members. The mobile application
+        transforms passengers from passive travellers into active participants
+        of the shared experience.
+      </p>
+
+      <img src="/images/convoy/phone_final.png" alt="Passenger App" style="cursor: pointer;" onclick="window.location.href = '/images/convoy/phone_final.png'" />
+</div>
+      <h3>Central Vehicle Display</h3>
+<div class="text-content-center">
+      <p>
+        The central display acts as the primary coordination hub during the
+        trip. It provides access to route information, convoy status, group
+        decisions, and points of interest while maintaining awareness of the
+        broader travel experience.
+      </p>
+
+      <img
+        src="/images/convoy/central_display_final.png" style="cursor: pointer;" onclick="window.location.href = '/images/convoy/central_display_final.png'"
+        alt="Central Display"
+      />
+</div>
+
+      <h3>Driver Cluster</h3>
+      <div class="text-content-center">
+      <p>
+        To minimize distraction, the driver cluster presents only the most
+        essential information required during driving. Complex interactions
+        remain on the passenger application and central display, while the
+        cluster focuses on navigation, convoy awareness, and critical travel
+        updates.
+      </p>
+
+      <img src="/images/convoy/driver_cluster_final.png" alt="Driver Cluster" style="cursor: pointer"
+          onclick="window.location.href = '/images/convoy/driver_cluster_final.png'" />
+      </div>
+    </section>
+
+    <section id="project" class="section">
+      <h2>My Contribution</h2>
+
+      <p class="text-content-center">
+        My primary focus was defining the logical structure of the ecosystem and
+        ensuring a coherent experience across the different touchpoints. I
+        contributed to user research, persona creation, journey mapping, user flow, interaction logic, and rapid
+        prototyping. I was particularly involved in exploring how passengers,
+        drivers, and vehicles connect within the system and how information
+        should be prioritized across the mobile application, central display,
+        and driver cluster.
+      </p>
+    </section>
+
+    <section id="project" class="section">
+      <h2>Takeaways</h2>
+        <div class="text-content-center">
+      <p >
+        This project challenged me to design for an ecosystem rather than a
+        single interface. It highlighted the importance of information
+        prioritization across different contexts, balancing engagement with
+        safety, and designing interactions that support collaboration without
+        increasing cognitive load. It also strengthened my ability to rapidly
+        prototype complex service concepts and communicate them through
+        interactive demonstrations.
+      </p>
+      <p>It was a pleasure to consult with designers from Mercedes to get their insights and feedback on the project.</p>
+
+      <img src="/images/convoy/presentation.jpg" alt="Presentation of the project"  />
+        </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Nina Törő. All Rights Reserved</p>
+    </footer>
+
+    <script src="/scripts.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  </body>
+</html>
