@@ -5,9 +5,10 @@
   --surface:        #111111;
   --border:         #1d1d1d;
   --border-active:  #2e2e2e;
+  --border-ui:      #8d8d8d; /* 3.13:1 on --bg — meets non-text contrast for UI components */
   --fg:             #efefef;
-  --text:           #bdbdbd;
-  --muted:          #484848;
+  --text:           #dbdbdb;
+  --muted:          #aeaeae; /* 4.57:1 on --bg — meets WCAG AA for normal text */
   --dim:            #252525;
 }
 
@@ -104,7 +105,7 @@ nav {
     font-family: 'JetBrains Mono', monospace;
     color: var(--muted);
     text-decoration: none;
-    font-size: 0.76rem;
+    font-size: 0.80rem;
     text-transform: lowercase;
     letter-spacing: 0.02em;
     position: relative;
@@ -163,7 +164,7 @@ nav ul li a {
     font-family: 'JetBrains Mono', monospace;
     color: var(--muted);
     text-decoration: none;
-    font-size: 0.76rem;
+    font-size: 0.80rem;
     text-transform: lowercase;
 }
 
@@ -184,7 +185,7 @@ header h1 {
 
 header p {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
+    font-size: 0.80rem;
     margin-top: 14px;
     color: var(--muted);
     letter-spacing: 0.04em;
@@ -203,7 +204,7 @@ header p {
 
 /* Section Styling */
 .section {
-    margin: 20px;
+    margin: 0 auto;
     margin-bottom: 5vh;
     text-align: center;
     max-width: 1920px;
@@ -212,7 +213,7 @@ header p {
 
 .section h2 {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.75rem;
+    font-size: 1.9rem;
     font-weight: 400;
     margin-bottom: 44px;
     color: var(--fg);
@@ -221,7 +222,7 @@ header p {
 
 .section h3 {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
+    font-size: 1.2rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.14em;
@@ -254,9 +255,7 @@ p + img {
     z-index: -1;
 }
 
-#project{
-    margin: 0 auto;
-}
+/* #project removed — .section now uses margin: 0 auto */
 
 ol li{
     text-align: left;
@@ -305,10 +304,10 @@ ol li{
     min-width: 260px;
     transition: border-color 0.2s ease, background-color 0.2s ease;
     color: var(--fg);
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-ui);
     display: flex;
     flex-direction: column;
-    cursor: pointer;
+    text-decoration: none;
     overflow: hidden;
     scroll-snap-align: start;
 }
@@ -362,9 +361,9 @@ ol li{
 
 .tag {
     font-family: 'JetBrains Mono', monospace;
-    background-color: transparent;
+    background-color: var(--border);
     color: var(--muted);
-    font-size: 0.63rem;
+    font-size: 0.75rem;
     padding: 2px 7px;
     border-radius: 0;
     border: 1px solid var(--dim);
@@ -505,10 +504,10 @@ footer {
 }
 
 .social-icon {
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
     background-color: transparent;
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-ui);
     border-radius: 0;
     display: flex;
     justify-content: center;
@@ -735,7 +734,7 @@ th {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--muted);
+    color: var(--text); /* --text (#bdbdbd) on --surface (#111) = 10:1 ✓ */
     background-color: var(--surface);
 }
 
@@ -782,7 +781,6 @@ td a:hover {
     background-position: center;
     background-repeat: no-repeat;
     margin-bottom: 10px;
-    filter: grayscale(100%) brightness(0.65);
 }
 
 .circle-label {
@@ -926,7 +924,13 @@ td a:hover {
     }
 
     .project-content {
-        padding: 14px;
+        padding-left: 14px;
+        padding-bottom: 14px;
+        padding-right: 14px;
+    }
+
+    .project-content h3 {
+        margin-top: 0px;
     }
       .social-container {
         flex-wrap: nowrap; /* Prevents wrapping so they stay in one row */
@@ -1102,6 +1106,71 @@ td a:hover {
     flex: 1 1 100%;
     max-width: 100%;
   }
+}
+
+/* ── Skip link ─────────────────────────────────────── */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    z-index: 9999;
+    padding: 12px 20px;
+    background: var(--fg);
+    color: var(--bg);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: top 0.1s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 2px solid var(--bg);
+    outline-offset: -4px;
+}
+
+/* ── Focus indicators ──────────────────────────────── */
+:focus-visible {
+    outline: 2px solid var(--fg);
+    outline-offset: 3px;
+}
+
+/* Cards and block-level links get inset outline */
+a.project:focus-visible {
+    outline: 2px solid var(--fg);
+    outline-offset: -2px;
+}
+
+.social-icon:focus-visible {
+    outline: 2px solid var(--fg);
+    outline-offset: 2px;
+}
+
+.nav-logo-link:focus-visible {
+    outline: 2px solid var(--fg);
+    outline-offset: 4px;
+}
+
+/* Keyboard-accessible images (lightbox targets) */
+img[role="button"]:focus-visible {
+    outline: 2px solid var(--fg);
+    outline-offset: 2px;
+}
+
+/* ── Reduced motion ────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .circle {
+        animation: none;
+    }
 }
 
 /* ── Lightbox ──────────────────────────────────────── */

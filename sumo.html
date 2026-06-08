@@ -11,18 +11,21 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Navigation -->
-    <nav class="fixed-nav">
+    <nav class="fixed-nav" aria-label="Main navigation">
         <div class="nav-container">
         <a href="index.html" class="nav-logo-link"><img src="/images/logo.png" class="nav-logo" alt="Home"></a>
-            <button class="hamburger" id="hamburger-btn">&#9776;</button> <!-- Hamburger Menu -->
-            <ul class="nav-links">
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="index.html#projects" data-aos="fade-up" data-aos-duration="1000">Projects</a></li>
                 <li><a href="index.html#about" data-aos="fade-up" data-aos-duration="1000">About</a></li>
                 <li><a href="index.html#contact" data-aos="fade-up" data-aos-duration="1000">Contact</a></li>
             </ul>
         </div>
     </nav>
+
+    <main id="main-content">
 
     <!-- Header -->
     <header id="header">
@@ -32,14 +35,14 @@
     </header>
 
     <!-- Index image -->
-    <section id="project" class="section ">
+    <section class="section">
         <div class="project-image">
             <img src="/images/sumorobot/index-sumo.png" alt="Project Title Image">
         </div>
     </section>
 
     <!-- Project info -->
-    <section id="project" class="section">
+    <section class="section">
         <div class="project-info">
             <h2>About the Project</h2>
             <p>
@@ -56,16 +59,19 @@
     </section>
 
     <!-- Table of infos -->
-    <section id="project" class="section">
+    <section class="section">
         <table>
+        <thead>
             <tr>
-                <th>Project type</th>
-                <th>Role</th>
-                <th>Industry</th>
-                <th>Tools</th>
-                <th>Duration</th>
-                <th>Other info</th>
+                <th scope="col">Project type</th>
+                <th scope="col">Role</th>
+                <th scope="col">Industry</th>
+                <th scope="col">Tools</th>
+                <th scope="col">Duration</th>
+                <th scope="col">Other info</th>
             </tr>
+        </thead>
+        <tbody>
             <tr>
                 <td>
                     Robot build
@@ -84,10 +90,12 @@
                     It was an independent laboratory work at Budapest University of Technology and Economics.
                 </td>
             </tr>
-        </table>
+        
+        </tbody>
+    </table>
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
         <div class="left-title-boxes">
             <h2>The Problem</h2>
             <div>
@@ -101,11 +109,11 @@
                 </p>
             </div>
         </div>
-        <hr class="divider">
+        <hr class="divider" aria-hidden="true">
     </section>
 
     <!-- Research Section -->
-    <section id="project" class="section">
+    <section class="section">
         <div class="text-content-center">
             <h2>Design process</h2>
             <p>First I had to understand the basics of electronics, so I started with some smaller tasks, like blinking
@@ -160,7 +168,7 @@
     </section>
 
     <!-- Wireframes Section -->
-    <section id="project" class="section">
+    <section class="section">
         <div class="text-content-center">
             <h2>Assembly and wiring</h2>
             <h3>3D model of the sumo robot:</h3>
@@ -181,17 +189,20 @@
         </div>
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
         <h3>Used elements:</h3>
         <table>
+        <thead>
             <tr>
-                <th>Arduino board</th>
-                <th>Motor Driver shield</th>
-                <th>Distance sensor</th>
-                <th>Reflection sensor</th>
-                <th>Motors</th>
-                <th>Robot body</th>
+                <th scope="col">Arduino board</th>
+                <th scope="col">Motor Driver shield</th>
+                <th scope="col">Distance sensor</th>
+                <th scope="col">Reflection sensor</th>
+                <th scope="col">Motors</th>
+                <th scope="col">Robot body</th>
             </tr>
+        </thead>
+        <tbody>
             <tr>
                 <td>
                     Arduino Uno
@@ -210,10 +221,12 @@
                     It was made with laser-cut PVC sheet
                 </td>
             </tr>
-        </table>
+        
+        </tbody>
+    </table>
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
         <h2>Strategy</h2>
         <p class="text-content-center">
             I did some secondary research on best practices for sumo robot strategy. It helped me a lot to find my own
@@ -232,7 +245,7 @@
 
     <!-- Final Deliverables Section -->
 
-    <section id="project" class="section">
+    <section class="section">
         <h2>Final Deliverables</h2>
         <p class="text-content-center">The final prototype of the robot is shown below. It was cut out of PVC sheets and
             fixed with screws. The angle of the
@@ -246,6 +259,8 @@
             <img class="image-grid-item" src="images/sumorobot/robot-real3.png" alt="Built robot 3">
         </div>
     </section>
+
+    </main>
 
 
 

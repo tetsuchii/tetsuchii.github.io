@@ -11,18 +11,21 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Navigation -->
-    <nav class="fixed-nav">
+    <nav class="fixed-nav" aria-label="Main navigation">
         <div class="nav-container">
         <a href="index.html" class="nav-logo-link"><img src="/images/logo.png" class="nav-logo" alt="Home"></a>
-            <button class="hamburger" id="hamburger-btn">&#9776;</button> <!-- Hamburger Menu -->
-            <ul class="nav-links">
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="index.html#projects" data-aos="fade-up" data-aos-duration="1000">Projects</a></li>
                 <li><a href="index.html#about" data-aos="fade-up" data-aos-duration="1000">About</a></li>
                 <li><a href="index.html#contact" data-aos="fade-up" data-aos-duration="1000">Contact</a></li>
             </ul>
         </div>
     </nav>
+
+    <main id="main-content">
 
     <!-- Header Section -->
     <header id="header">
@@ -31,19 +34,18 @@
     </header>
 
     <!-- Animation Section -->
-    <div class="animation-container">
+    <div class="animation-container" aria-hidden="true">
         <div class="wrapper">
             <div class="circle" id="circle"></div>
         </div>
     </div>
 
     <!-- Projects Section -->
-    <section id="projects" class="section" data-aos="fade-up" data-aos-duration="1000">
+    <section id="projects" class="section" aria-labelledby="projects-name" data-aos="fade-up" data-aos-duration="1000">
         <h2 id="projects-name">My Projects</h2>
         <div class="project-container">
-            <div class="project" onclick="window.location.href='convoy.html';" data-aos="flip-left"
-                data-aos-duration="1000">
-                <img class="index-img" src="/images/convoy/fekvo1-convoy.png">
+            <a href="convoy.html" class="project" data-aos="flip-left" data-aos-duration="1000" aria-label="View project: Mercedes Convoy Ecosystem">
+                <img class="index-img" src="/images/convoy/fekvo1-convoy.png" alt="">
                 <div class="project-content">
                     <h3>Mercedes Convoy Ecosystem</h3>
                     <p>A convoy coordination system for Mercedes vehicles.</p>
@@ -54,11 +56,10 @@
                         <span class="tag">Prototyping</span>
                     </div>
                 </div>
-            </div>
+            </a>
 
-            <div class="project" onclick="window.location.href='poker.html';" data-aos="flip-left"
-                data-aos-duration="1000">
-                <img class="index-img" src="/images/poker/fekvo1_poker.png">
+            <a href="poker.html" class="project" data-aos="flip-left" data-aos-duration="1000" aria-label="View project: Play Poker With Friends">
+                <img class="index-img" src="/images/poker/fekvo1_poker.png" alt="">
                 <div class="project-content">
                     <h3>Play Poker With Friends!</h3>
                     <p>A neo-brutalist poker application for friends to play together.</p>
@@ -67,11 +68,10 @@
                         <span class="tag">Prototyping</span>
                     </div>
                 </div>
-            </div>
+            </a>
 
-            <div class="project" onclick="window.location.href='bkk.html';" data-aos="flip-left"
-                data-aos-duration="1000">
-                <img class="index-img" src="/images/bkk/fekvo1_bkk.png">
+            <a href="bkk.html" class="project" data-aos="flip-left" data-aos-duration="1000" aria-label="View project: BKK Pay&Go Validator">
+                <img class="index-img" src="/images/bkk/fekvo1_bkk.png" alt="">
                 <div class="project-content">
                     <h3>BKK Pay&Go Validator</h3>
                     <p>Experimenting with no-text redesign for public transport validation.</p>
@@ -80,11 +80,10 @@
                         <span class="tag">User Testing</span>
                     </div>
                 </div>
-            </div>
+            </a>
 
-            <div class="project" onclick="window.location.href='phoca.html';" data-aos="flip-left"
-                data-aos-duration="1000">
-                <img class="index-img" src="/images/phoca/fekvo1-phoca.png">
+            <a href="phoca.html" class="project" data-aos="flip-left" data-aos-duration="1000" aria-label="View project: Phoca App">
+                <img class="index-img" src="/images/phoca/fekvo1-phoca.png" alt="">
                 <div class="project-content">
                     <h3>Phoca App</h3>
                     <p>A self-care and community-building application for Hungarian caregivers in rural areas for their
@@ -94,11 +93,10 @@
                         <span class="tag">UI Design</span>
                     </div>
                 </div>
-            </div>
+            </a>
 
-            <div class="project" onclick="window.location.href='niu.html';" data-aos="flip-left"
-                data-aos-duration="1000">
-                <img class="index-img" src="images/niu/index-niu.png">
+            <a href="niu.html" class="project" data-aos="flip-left" data-aos-duration="1000" aria-label="View project: Hungarian Innovation Ecosystem Map">
+                <img class="index-img" src="images/niu/index-niu.png" alt="">
                 <div class="project-content">
                     <h3>Hungarian Innovation Ecosystem Map</h3>
                     <p>New intuitive and more user-friendly UI for NIÜ (Hungarian National Innovation Agency) on the
@@ -107,11 +105,11 @@
                         <span class="tag">UI Design</span>
                     </div>
                 </div>
-            </div>
+            </a>
 
             <!-- <div class="project" data-aos="flip-left" onclick="window.location.href='sumo.html';"
                 data-aos-duration="1000">
-                <img class="index-img" src="images/sumorobot/index-sumo.png">
+                <img class="index-img" src="images/sumorobot/index-sumo.png" alt="">
                 <div class="project-content">
                     <h3>Sumo Robot</h3>
                     <p>Project to build an Autonomous (mini) sumo robot for the Robotex International competition using
@@ -126,7 +124,7 @@
 
            <!-- <div class="project" data-aos="flip-left" onclick="window.location.href='trainer.html';"
                 data-aos-duration="1000">
-                <img class="index-img" src="images/trAIner/index-trainer.png">
+                <img class="index-img" src="images/trAIner/index-trainer.png" alt="">
                 <div class="project-content">
                     <h3>trAIner App</h3>
                     <p>Android-based yoga teaching app developed using the Google Machine Learning Kit. My BSc thesis
@@ -139,9 +137,8 @@
                 </div>
             </div> -->
 
-            <div class="project" data-aos="flip-left" onclick="window.location.href='qnet.html';"
-                data-aos-duration="1000">
-                <img class="index-img" src="images/q-net/mockup.png">
+            <a href="qnet.html" class="project" data-aos="flip-left" data-aos-duration="1000" aria-label="View project: Q-net Web Makeover">
+                <img class="index-img" src="images/q-net/mockup.png" alt="">
                 <div class="project-content">
                     <h3>Q-net Web Makeover</h3>
                     <p>Reworking the old website, improving the brand identity and helping to rethink and strengthen the
@@ -153,11 +150,10 @@
                         <span class="tag">Branding</span>
                     </div>
                 </div>
-            </div>
+            </a>
 
-            <div class="project" data-aos="flip-left" onclick="window.location.href='graphic.html';"
-                data-aos-duration="1000">
-                <img class="index-img" src="images/graphic/graphic-index.png">
+            <a href="graphic.html" class="project" data-aos="flip-left" data-aos-duration="1000" aria-label="View project: Graphic Works">
+                <img class="index-img" src="images/graphic/graphic-index.png" alt="">
                 <div class="project-content">
                     <h3>Graphic Works</h3>
                     <p>A selection of some of my graphic works.</p>
@@ -168,15 +164,15 @@
                         <span class="tag">Visual Identity</span>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
     </section>
 
     <!-- About me Section -->
-    <section id="about" class="section" data-aos="fade-up" data-aos-duration="1000">
+    <section id="about" class="section" aria-labelledby="about-section" data-aos="fade-up" data-aos-duration="1000">
         <h2 id="about-section">About me</h2>
         <div class="about-content">
-            <img class="about-image" src="images/about-me.png">
+            <img class="about-image" src="images/about-me.png" alt="Nina Törő">
             <p class="small-title">Hi, I'm Nina Törő, a UX/UI designer and (web) developer. </p>
             <p>I was fascinated by screens from a very young age (like many other GenZ), but it has become my main hobby
                 for more than
@@ -196,26 +192,27 @@
     </section>
 
     <!-- Contact me Section -->
-    <section id="contact" class="section" data-aos="fade-up" data-aos-duration="1000">
+    <section id="contact" class="section" aria-labelledby="contact-section" data-aos="fade-up" data-aos-duration="1000">
         <h2 id="contact-section">Contact me</h2>
         <div class="contact-content">
             <p>anna.nina.toro@gmail.com</p>
             <div class="social-container">
-                <a href="https://www.instagram.com/_ninatoro/" class="social-icon" target="_blank">
-                    <i class="fab fa-instagram"></i> <!-- Instagram icon -->
+                <a href="https://www.instagram.com/_ninatoro/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in new tab)">
+                    <i class="fab fa-instagram" aria-hidden="true" aria-hidden="true"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/nina-t%C3%B6r%C5%91-5a8b6922b/" class="social-icon"
-                    target="_blank">
-                    <i class="fab fa-linkedin-in"></i> <!-- LinkedIn icon -->
+                <a href="https://www.linkedin.com/in/nina-t%C3%B6r%C5%91-5a8b6922b/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in new tab)">
+                    <i class="fab fa-linkedin-in" aria-hidden="true" aria-hidden="true"></i>
                 </a>
-                <a href="mailto:anna.nina.toro@gmail.com" class="social-icon" target="_blank">
-                    <i class="fa fa-envelope"></i> <!-- Email icon -->
+                <a href="mailto:anna.nina.toro@gmail.com" class="social-icon" aria-label="Send email">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
+
+    </main>
     <footer>
         <p>&copy; 2026 Nina Törő. All Rights Reserved.</p>
     </footer>

@@ -58,35 +58,61 @@ window.onload = equalizeCardHeights;
 window.onresize = equalizeCardHeights;
 
 document.addEventListener("DOMContentLoaded", function () {
-  const hamburger = document.getElementById("hamburger-btn"); // Using the same button
+  const hamburger = document.getElementById("hamburger-btn");
   const navLinks = document.querySelector(".nav-links");
   const navItems = document.querySelectorAll(".nav-links li a");
 
-  // Toggle menu and change icon on hamburger click
   hamburger.addEventListener("click", function () {
+    const isExpanded = navLinks.classList.contains("active");
     navLinks.classList.toggle("active");
     this.classList.toggle("active");
-
-    // Toggle between ☰ (hamburger) and ✖ (X)
+    this.setAttribute("aria-expanded", String(!isExpanded));
     this.innerHTML = this.innerHTML === "☰" ? "✖" : "☰";
   });
 
-  // Close menu when a nav item is clicked
   navItems.forEach((item) => {
     item.addEventListener("click", function () {
       navLinks.classList.remove("active");
       hamburger.classList.remove("active");
-      hamburger.innerHTML = "☰"; // Reset icon to hamburger
+      hamburger.setAttribute("aria-expanded", "false");
+      hamburger.innerHTML = "☰";
     });
+  });
+
+  // Close menu on Escape
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && navLinks.classList.contains("active")) {
+      navLinks.classList.remove("active");
+      hamburger.classList.remove("active");
+      hamburger.setAttribute("aria-expanded", "false");
+      hamburger.innerHTML = "☰";
+      hamburger.focus();
+    }
   });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+  // The rotating "N" in the hero heading — keyboard + ARIA
   const letterN = document.querySelector(".rotate");
+  if (letterN) {
+    letterN.setAttribute("role", "button");
+    letterN.setAttribute("tabindex", "0");
+    letterN.setAttribute("aria-pressed", "false");
+    letterN.setAttribute("aria-label", "Animate letter N");
 
-  letterN.addEventListener("click", function () {
-    letterN.classList.toggle("active");
-  });
+    function toggleRotate() {
+      const isActive = letterN.classList.toggle("active");
+      letterN.setAttribute("aria-pressed", String(isActive));
+    }
+
+    letterN.addEventListener("click", toggleRotate);
+    letterN.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        toggleRotate();
+      }
+    });
+  }
 });
 
 // ── Lightbox ─────────────────────────────────────────
@@ -100,10 +126,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const lbImg = document.createElement("img");
   lbImg.id = "lb-img";
+  lbImg.alt = "";
 
   const closeBtn = document.createElement("button");
   closeBtn.id = "lb-close";
-  closeBtn.setAttribute("aria-label", "Close");
+  closeBtn.setAttribute("aria-label", "Close image preview");
   closeBtn.textContent = "✕";
 
   overlay.appendChild(lbImg);
@@ -111,56 +138,92 @@ document.addEventListener("DOMContentLoaded", function () {
   document.body.appendChild(overlay);
 
   let clearSrcTimer;
+  let triggerElement = null; // element that opened the lightbox
 
-  function openLightbox(src, alt) {
+  function openLightbox(src, alt, trigger) {
     clearTimeout(clearSrcTimer);
+    triggerElement = trigger || document.activeElement;
     lbImg.src = src;
     lbImg.alt = alt || "";
+    overlay.setAttribute("aria-label", alt ? "Image preview: " + alt : "Image preview");
     overlay.classList.add("lb-open");
     document.body.style.overflow = "hidden";
+    // Move focus to close button
+    closeBtn.focus();
   }
 
   function closeLightbox() {
     overlay.classList.remove("lb-open");
     document.body.style.overflow = "";
-    // Clear src after fade-out to free memory without a visible flash
     clearSrcTimer = setTimeout(function () {
       lbImg.src = "";
     }, 200);
+    // Restore focus to the element that opened the lightbox
+    if (triggerElement && typeof triggerElement.focus === "function") {
+      triggerElement.focus();
+    }
+    triggerElement = null;
   }
 
-  // Close when clicking the backdrop (not the image itself)
+  // Trap focus inside lightbox when open — only close button is focusable
+  overlay.addEventListener("keydown", function (e) {
+    if (!overlay.classList.contains("lb-open")) return;
+    if (e.key === "Tab") {
+      e.preventDefault();
+      closeBtn.focus();
+    }
+    if (e.key === "Escape") {
+      closeLightbox();
+    }
+  });
+
   overlay.addEventListener("click", function (e) {
     if (e.target === overlay) closeLightbox();
   });
 
   closeBtn.addEventListener("click", closeLightbox);
 
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && overlay.classList.contains("lb-open")) {
-      closeLightbox();
+  // Make lightbox-eligible images keyboard accessible
+  function isEligible(img) {
+    if (img.classList.contains("index-img")) return false;
+    if (img.classList.contains("about-image")) return false;
+    if (img.closest("nav")) return false;
+    if (img.id === "lb-img") return false;
+    return true;
+  }
+
+  document.querySelectorAll("img").forEach(function (img) {
+    if (!isEligible(img)) return;
+    img.setAttribute("tabindex", "0");
+    img.setAttribute("role", "button");
+    if (!img.getAttribute("aria-label")) {
+      img.setAttribute("aria-label", img.alt ? "Open image: " + img.alt : "Open image");
     }
+    img.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openLightbox(img.src, img.alt, img);
+      }
+    });
   });
 
-  // Intercept image clicks in the capture phase so this runs before any
-  // inline onclick="window.location.href=..." handlers on the element.
-  // Calling stopPropagation() here prevents those handlers from firing.
+  // Intercept image clicks in capture phase — fires before inline onclick handlers
   document.addEventListener(
     "click",
     function (e) {
       const img = e.target;
       if (img.tagName !== "IMG") return;
-
-      // Exclusions: home-page card thumbnails and the profile photo
-      if (img.classList.contains("index-img")) return;
-      if (img.classList.contains("about-image")) return;
-
-      // Skip anything inside the nav
-      if (img.closest("nav")) return;
-
+      if (!isEligible(img)) return;
       e.stopPropagation();
-      openLightbox(img.src, img.alt);
+      openLightbox(img.src, img.alt, img);
     },
-    true // capture phase
+    true
   );
+
+  // Make onclick divs (e.g. bkk circle-images) keyboard accessible
+  document.querySelectorAll('[role="link"][tabindex]').forEach(function (el) {
+    el.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") el.click();
+    });
+  });
 });

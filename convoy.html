@@ -16,11 +16,12 @@
   </head>
 
   <body>
-    <nav class="fixed-nav">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav class="fixed-nav" aria-label="Main navigation">
       <div class="nav-container">
         <a href="index.html" class="nav-logo-link"><img src="/images/logo.png" class="nav-logo" alt="Home"></a>
-        <button class="hamburger" id="hamburger-btn">&#9776;</button>
-        <ul class="nav-links">
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
+        <ul class="nav-links" id="nav-links">
           <li><a href="index.html#projects">Projects</a></li>
           <li><a href="index.html#about">About</a></li>
           <li><a href="index.html#contact">Contact</a></li>
@@ -28,21 +29,23 @@
       </div>
     </nav>
 
+    <main id="main-content">
+
     <header id="header">
       <h1>Mercedes Convoy</h1>
       <p>designing shared experiences for multi-car journeys</p>
     </header>
 
-    <section id="project" class="section">
+    <section class="section">
       <div class="project-image">
         <img
           src="/images/convoy/fekvo1-convoy.png"
-          alt="Mercedes Convoy Hero"
+          alt="Mercedes Convoy Ecosystem – overview mockup"
         />
       </div>
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
       <div class="project-info">
         <h2>About the Project</h2>
         <p>
@@ -61,16 +64,19 @@
       </div>
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
       <table>
+        <thead>
         <tr>
-          <th>Project type</th>
-          <th>Role</th>
-          <th>Industry</th>
-          <th>Tools</th>
-          <th>Duration</th>
-          <th>Other info</th>
+          <th scope="col">Project type</th>
+          <th scope="col">Role</th>
+          <th scope="col">Industry</th>
+          <th scope="col">Tools</th>
+          <th scope="col">Duration</th>
+          <th scope="col">Other info</th>
         </tr>
+        </thead>
+        <tbody>
         <tr>
           <td>UX/UI Design, Service Design</td>
           <td>UX/UI Designer</td>
@@ -81,10 +87,12 @@
             <td>
                 This project was part of the Mercedes – In-Car UX Design course, where we had the opportunity to consult with designers from Mercedes and receive feedback on our concept. My teammates were Hajnal Mészáros and Virág Tibenszki.
         </tr>
-      </table>
+      
+        </tbody>
+    </table>
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
       <div class="left-title-boxes">
         <h2>The Challenge</h2>
 
@@ -113,12 +121,12 @@
         they are travelling together?”
       </blockquote>
 
-      <hr class="divider" />
+      <hr class="divider" aria-hidden="true" />
     </section>
 
     <!-- RESEARCH -->
 
-    <section id="project" class="section">
+    <section class="section">
       <div class="text-content-center">
         <h2>Research</h2>
 
@@ -193,12 +201,12 @@
         />
       </div>
 
-      <hr class="divider" />
+      <hr class="divider" aria-hidden="true" />
     </section>
 
     <!-- INSIGHTS -->
 
-    <section id="project" class="section">
+    <section class="section">
       <h2>Key Insights</h2>
 
       <p class="text-content-center">
@@ -280,12 +288,12 @@
         destination."
       </blockquote>
 
-      <hr class="divider" />
+      <hr class="divider" aria-hidden="true" />
     </section>
 
     <!-- DESIGN OPPORTUNITY -->
 
-    <section id="project" class="section">
+    <section class="section">
       <div class="text-content-center">
         <h2>Design Opportunity</h2>
 
@@ -302,10 +310,10 @@
         they are travelling together?"
       </blockquote>
 
-      <hr class="divider" />
+      <hr class="divider" aria-hidden="true" />
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
       <div class="text-content-center">
         <h2>The Solution</h2>
 
@@ -383,10 +391,10 @@
         </div>
       </div>
 
-      <hr class="divider" />
+      <hr class="divider" aria-hidden="true" />
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
       <div class="text-content-center">
         <h2>User Flow</h2>
 
@@ -407,7 +415,7 @@
       </div>
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
       <h2>Final Design</h2>
 <div class="text-content-center">
       <p>
@@ -461,7 +469,7 @@
       </div>
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
       <h2>My Contribution</h2>
         <div class="text-content-center">
       <p>
@@ -476,7 +484,7 @@
         </div>
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
       <h2>Takeaways</h2>
         <div class="text-content-center">
       <p >
@@ -493,6 +501,8 @@
       <img src="/images/convoy/presentation.jpg" alt="Presentation of the project"  />
         </div>
     </section>
+
+    </main>
 
     <footer>
       <p>&copy; 2026 Nina Törő. All Rights Reserved</p>

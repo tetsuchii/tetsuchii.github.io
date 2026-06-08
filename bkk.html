@@ -16,11 +16,12 @@
   </head>
 
   <body>
-    <nav class="fixed-nav">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav class="fixed-nav" aria-label="Main navigation">
       <div class="nav-container">
         <a href="index.html" class="nav-logo-link"><img src="/images/logo.png" class="nav-logo" alt="Home"></a>
-        <button class="hamburger" id="hamburger-btn">&#9776;</button>
-        <ul class="nav-links">
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
+        <ul class="nav-links" id="nav-links">
           <li><a href="index.html#projects">Projects</a></li>
           <li><a href="index.html#about">About</a></li>
           <li><a href="index.html#contact">Contact</a></li>
@@ -28,18 +29,20 @@
       </div>
     </nav>
 
+    <main id="main-content">
+
 <header id="header">
     <h1>BKK Pay&Go</h1>
     <p>exploring text-free validation for public transportation</p>
 </header>
 
-<section id="project" class="section">
+<section class="section">
     <div class="project-image">
-        <img src="/images/bkk/fekvo1_bkk.png" alt="BKK Pay&Go">
+        <img src="/images/bkk/fekvo1_bkk.png" alt="BKK Pay&Go Validator – interface overview">
     </div>
 </section>
 
-<section id="project" class="section">
+<section class="section">
     <div class="project-info">
         <h2>About the Project</h2>
 
@@ -58,16 +61,19 @@
     </div>
 </section>
 
-<section id="project" class="section">
+<section class="section">
     <table>
+        <thead>
         <tr>
-            <th>Project type</th>
-            <th>Role</th>
-            <th>Industry</th>
-            <th>Tools</th>
-            <th>Duration</th>
-            <th>Other info</th>
+            <th scope="col">Project type</th>
+            <th scope="col">Role</th>
+            <th scope="col">Industry</th>
+            <th scope="col">Tools</th>
+            <th scope="col">Duration</th>
+            <th scope="col">Other info</th>
         </tr>
+        </thead>
+        <tbody>
 
         <tr>
             <td>UX Research, Interaction Design</td>
@@ -80,10 +86,12 @@
                 Team members: Hajnal Mészáros, Liliána Bitó.
             </td>
         </tr>
+    
+        </tbody>
     </table>
 </section>
 
-<section id="project" class="section">
+<section class="section">
 
     <div class="left-title-boxes">
 
@@ -113,7 +121,7 @@
     <div class="divider" ></div>
 </section>
 
-<section id="project" class="section">
+<section class="section">
   <div class="text-content-center">
     <h2>Research</h2>
 
@@ -198,10 +206,10 @@
     <img src="/images/bkk/testing.png" alt="Testing Process" />
   </div>
 
-  <hr class="divider" />
+  <hr class="divider" aria-hidden="true" />
 </section>
 
-<section id="project" class="section">
+<section class="section">
     <h2>Key Findings</h2>
 
     <p class="text-content-center">
@@ -260,10 +268,10 @@
         "Visual communication can simplify validation, but not every transport decision can be reduced to a single symbol."
     </blockquote>
 
-    <hr class="divider" />
+    <hr class="divider" aria-hidden="true" />
 </section>
 
-<section id="project" class="section">
+<section class="section">
 
     <h2>Main User Flows</h2>
 
@@ -277,7 +285,7 @@
         background-repeat: no-repeat;
         background-position: center;
         cursor: pointer;
-            " onclick="window.location.href='images/bkk/ticket.png'"></div>
+            " role="link" tabindex="0" aria-label="View Single Ticket Purchase flow" onclick="window.location.href='images/bkk/ticket.png'"></div>
             <div class="circle-label">Single Ticket Purchase</div>
             <div class="circle-description">
                 Buying a ticket and receiving success or error feedback.
@@ -291,7 +299,7 @@
         background-repeat: no-repeat;
         background-position: center;
               border-radius: 0%; cursor: pointer;
-            " onclick="window.location.href='images/bkk/multiple-ticket.png'"></div>
+            " role="link" tabindex="0" aria-label="View Multiple Tickets flow" onclick="window.location.href='images/bkk/multiple-ticket.png'"></div>
             <div class="circle-label">Multiple Tickets</div>
             <div class="circle-description">
                 Purchasing tickets for several passengers using a single device.
@@ -305,7 +313,7 @@
         background-repeat: no-repeat;
         background-position: center;
         cursor: pointer;
-            " onclick="window.location.href='images/bkk/suburbs.png'"></div>
+            " role="link" tabindex="0" aria-label="View Suburban Travel flow" onclick="window.location.href='images/bkk/suburbs.png'"></div>
             <div class="circle-label">Suburban Travel</div>
             <div class="circle-description">
                 Selecting travel zones for Budapest, suburban areas, or both.
@@ -319,7 +327,7 @@
 
 
 
-<section id="project" class="section">
+<section class="section">
 
     <div class="text-content-center">
 
@@ -340,7 +348,7 @@
 
 </section>
 
-<section id="project" class="section">
+<section class="section">
 
     <h2>Outcome</h2>
 
@@ -361,6 +369,8 @@
     </div>
 
 </section>
+
+    </main>
 
 
     <footer>

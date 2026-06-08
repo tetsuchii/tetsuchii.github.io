@@ -11,12 +11,13 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Navigation -->
-    <nav class="fixed-nav">
+    <nav class="fixed-nav" aria-label="Main navigation">
         <div class="nav-container">
         <a href="index.html" class="nav-logo-link"><img src="/images/logo.png" class="nav-logo" alt="Home"></a>
-            <button class="hamburger" id="hamburger-btn">&#9776;</button>
-            <ul class="nav-links">
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="index.html#projects" data-aos="fade-up" data-aos-duration="1000">Projects</a></li>
                 <li><a href="index.html#about" data-aos="fade-up" data-aos-duration="1000">About</a></li>
                 <li><a href="index.html#contact" data-aos="fade-up" data-aos-duration="1000">Contact</a></li>
@@ -24,13 +25,15 @@
         </div>
     </nav>
 
+    <main id="main-content">
+
     <!-- Header -->
     <header id="header">
         <h1>Design Manifesto</h1>
     </header>
 
     <!-- Manifesto Section -->
-    <section id="project" class="section">
+    <section class="section">
         <div class="project-info" data-aos="fade-up" data-aos-duration="1000">
             <h2>Introduction</h2>
             <p>
@@ -40,7 +43,7 @@
         </div>
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
         <div class="left-title-boxes" data-aos="fade-up">
             <h2>My 10 points</h2>
 
@@ -58,8 +61,10 @@
             </div>
         </div>
 
-        <hr class="divider">
+        <hr class="divider" aria-hidden="true">
     </section>
+
+    </main>
 
     <footer>
         <p>&copy; 2026 Nina Törő. All Rights Reserved</p>

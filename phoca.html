@@ -12,12 +12,13 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Navigation -->
-    <nav class="fixed-nav">
+    <nav class="fixed-nav" aria-label="Main navigation">
         <div class="nav-container">
         <a href="index.html" class="nav-logo-link"><img src="/images/logo.png" class="nav-logo" alt="Home"></a>
-            <button class="hamburger" id="hamburger-btn">&#9776;</button> <!-- Hamburger Menu -->
-            <ul class="nav-links">
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="index.html#projects" data-aos="fade-up" data-aos-duration="1000">Projects</a></li>
                 <li><a href="index.html#about" data-aos="fade-up" data-aos-duration="1000">About</a></li>
                 <li><a href="index.html#contact" data-aos="fade-up" data-aos-duration="1000">Contact</a></li>
@@ -25,19 +26,21 @@
         </div>
     </nav>
 
+    <main id="main-content">
+
     <header id="header">
         <h1>Phoca</h1>
         <p>your caregiver self-care companion</p>
     </header>
 
 
-    <section id="project" class="section">
+    <section class="section">
         <div class="project-image">
-            <img src="/images/phoca/fekvo1-phoca.png" alt="Project Title Image">
+            <img src="/images/phoca/fekvo1-phoca.png" alt="Phoca app – hero overview">
         </div>
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
         <div class="project-info">
             <h2>About the Project</h2>
             <p>
@@ -53,16 +56,19 @@
         </div>
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
         <table>
+        <thead>
             <tr>
-                <th>Project type</th>
-                <th>Role</th>
-                <th>Industry</th>
-                <th>Tools</th>
-                <th>Duration</th>
-                <th>Other info</th>
+                <th scope="col">Project type</th>
+                <th scope="col">Role</th>
+                <th scope="col">Industry</th>
+                <th scope="col">Tools</th>
+                <th scope="col">Duration</th>
+                <th scope="col">Other info</th>
             </tr>
+        </thead>
+        <tbody>
             <tr>
                 <td>
                     UI/UX Design for Mobile App
@@ -82,10 +88,12 @@
                         Scholarship of Excellence</a> for the project.
                 </td>
             </tr>
-        </table>
+        
+        </tbody>
+    </table>
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
         <div class="left-title-boxes">
             <h2>The Problem</h2>
             <div>
@@ -116,11 +124,11 @@
         <blockquote class="citate">
             “How might we empower women in rural communities to become key drivers of social and economic resilience?”
         </blockquote>
-        <hr class="divider">
+        <hr class="divider" aria-hidden="true">
     </section>
 
     <!-- Design Process Section -->
-    <section id="project" class="section">
+    <section class="section">
         <h2>Design Process</h2>
         <p class="text-content-center">I used the double diamond design process for this project. The image below shows
             the different parts of the
@@ -134,7 +142,7 @@
     </section>
 
     <!-- Research Section -->
-    <section id="project" class="section">
+    <section class="section">
         <div class="text-content-center">
             <h2>Research</h2>
             <p>To support my hypotheses and gather data, I used both primary and secondary research methods to explore
@@ -280,11 +288,11 @@
                 and joy in your heart.”
             </blockquote>
         </div>
-        <hr class="divider">
+        <hr class="divider" aria-hidden="true">
     </section>
 
     <!-- Userflow Section -->
-    <section id="project" class="section">
+    <section class="section">
         <div class="text-content-center">
             <h2>User flow</h2>
             <p>Once I had the desired functions in mind, I mapped out how users would navigate and interact with them,
@@ -299,7 +307,7 @@
     </section>
 
     <!-- Wireframes Section -->
-    <section id="project" class="section">
+    <section class="section">
         <div class="text-content-center">
             <h2>Wireframes</h2>
             <p class="text-content-center">Here are some of the initial wireframes for the project. These wireframes
@@ -317,7 +325,7 @@
 
     <!-- Final Deliverables Section -->
 
-    <section id="project" class="section">
+    <section class="section">
         <h2>Final Deliverables</h2>
         <p class="text-content-center">You can check out the high-fidelity prototype in Figma here: <a
                 href="https://www.figma.com/proto/Kw1cUyBmLdCpXvZ8Cf1StD/PHOCA?node-id=335-11625&p=f&t=zEUmTTvVb7yNuiv9-1&scaling=scale-down&content-scaling=fixed&page-id=335%3A11010&starting-point-node-id=335%3A11625&show-proto-sidebar=1">Link
@@ -329,7 +337,7 @@
         </div>
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
         <h2>Take away</h2>
         <p class="text-content-center">
             I really enjoyed working on this project—it became something close to my heart. It reinforced how important
@@ -338,6 +346,8 @@
             to work on
             similar projects in the future.</p>
     </section>
+
+    </main>
 
     <footer>
         <p>&copy; 2026 Nina Törő. All Rights Reserved</p>

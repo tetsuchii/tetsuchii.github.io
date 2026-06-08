@@ -11,18 +11,21 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Navigation -->
-    <nav class="fixed-nav">
+    <nav class="fixed-nav" aria-label="Main navigation">
         <div class="nav-container">
         <a href="index.html" class="nav-logo-link"><img src="/images/logo.png" class="nav-logo" alt="Home"></a>
-            <button class="hamburger" id="hamburger-btn">&#9776;</button> <!-- Hamburger Menu -->
-            <ul class="nav-links">
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="index.html#projects" data-aos="fade-up" data-aos-duration="1000">Projects</a></li>
                 <li><a href="index.html#about" data-aos="fade-up" data-aos-duration="1000">About</a></li>
                 <li><a href="index.html#contact" data-aos="fade-up" data-aos-duration="1000">Contact</a></li>
             </ul>
         </div>
     </nav>
+
+    <main id="main-content">
 
     <!-- Header -->
     <header id="header">
@@ -31,14 +34,14 @@
     </header>
 
     <!-- Index image -->
-    <section id="project" class="section ">
+    <section class="section">
         <div class="project-image">
-            <img src="/images/q-net/mockup.png" alt="Project Title Image">
+            <img src="/images/q-net/mockup.png" alt="Q-net website redesign mockup">
         </div>
     </section>
 
     <!-- Project info -->
-    <section id="project" class="section">
+    <section class="section">
         <div class="project-info">
             <h2>About the Project</h2>
             <p>
@@ -58,16 +61,19 @@
     </section>
 
     <!-- Table of infos -->
-    <section id="project" class="section">
+    <section class="section">
         <table>
+        <thead>
             <tr>
-                <th>Project type</th>
-                <th>Role</th>
-                <th>Industry</th>
-                <th>Tools</th>
-                <th>Duration</th>
-                <th>Other info</th>
+                <th scope="col">Project type</th>
+                <th scope="col">Role</th>
+                <th scope="col">Industry</th>
+                <th scope="col">Tools</th>
+                <th scope="col">Duration</th>
+                <th scope="col">Other info</th>
             </tr>
+        </thead>
+        <tbody>
             <tr>
                 <td>
                     UI/UX Design for Web, Service design
@@ -88,10 +94,12 @@
                     products and plans for the future.
                 </td>
             </tr>
-        </table>
+        
+        </tbody>
+    </table>
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
         <div class="left-title-boxes">
             <h2>The Problem</h2>
             <div>
@@ -112,11 +120,11 @@
         <blockquote class="citate">How might we create a unified digital experience that communicates complex services
             clearly and effectively to users
             across different cultures and regions?</blockquote>
-        <hr class="divider">
+        <hr class="divider" aria-hidden="true">
     </section>
 
     <!-- Wireframes Section -->
-    <section id="project" class="section">
+    <section class="section">
         <div class="text-content-center">
             <h2>Brand problems</h2>
             <p class="text-content-center">As seen in the image below, the two logos are quite similar, making it easy
@@ -167,19 +175,19 @@
     </section>
 
     <!-- Wireframes Section -->
-    <section id="project" class="section">
+    <section class="section">
         <div class="text-content-center">
             <h2>Design process</h2>
             <p class="text-content-center">For this project, I followed the design process I learned in my Google UX
                 course, which I had just completed before
                 starting the work.</p>
-            <img style="  filter: grayscale(100%);" src="images/q-net/design-thinking-process.webp">
+            <img style="filter: grayscale(100%);" src="images/q-net/design-thinking-process.webp" alt="Design thinking process: Empathise, Define, Ideate, Prototype, Test">
 
         </div>
     </section>
 
     <!-- Wireframes Section -->
-    <section id="project" class="section">
+    <section class="section">
         <div class="text-content-center">
             <h2>Research</h2>
             <p class="text-content-center">I began the project by conducting interviews with key stakeholders within the
@@ -346,13 +354,13 @@
                 This process helped us uncover key challenges and requirements, allowing us to create a structure that
                 aligns with both
                 user needs and business objectives.</p>
-            <img src="/images/q-net/info-architect.png">
+            <img src="/images/q-net/info-architect.png" alt="Q-net information architecture diagram">
         </div>
     </section>
 
 
     <!-- Wireframes Section -->
-    <section id="project" class="section">
+    <section class="section">
         <div class="text-content-center">
             <h2>Wireframes</h2>
             <p class="text-content-center">Collaboration with the sales team was crucial throughout the entire project.
@@ -436,7 +444,7 @@
 
     <!-- Final Deliverables Section -->
 
-    <section id="project" class="section">
+    <section class="section">
         <div class="text-content-center">
 
             <h2>Final Deliverables</h2>
@@ -452,7 +460,7 @@
         </div>
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
         <div class="text-content-center">
             <h2>Take away</h2>
             <p class="text-content-center">
@@ -466,6 +474,8 @@
         </div>
 
     </section>
+
+    </main>
 
     <footer>
         <p>&copy; 2026 Nina Törő. All Rights Reserved</p>

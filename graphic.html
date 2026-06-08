@@ -11,18 +11,21 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Navigation -->
-    <nav class="fixed-nav">
+    <nav class="fixed-nav" aria-label="Main navigation">
         <div class="nav-container">
         <a href="index.html" class="nav-logo-link"><img src="/images/logo.png" class="nav-logo" alt="Home"></a>
-            <button class="hamburger" id="hamburger-btn">&#9776;</button> <!-- Hamburger Menu -->
-            <ul class="nav-links">
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="index.html#projects" data-aos="fade-up" data-aos-duration="1000">Projects</a></li>
                 <li><a href="index.html#about" data-aos="fade-up" data-aos-duration="1000">About</a></li>
                 <li><a href="index.html#contact" data-aos="fade-up" data-aos-duration="1000">Contact</a></li>
             </ul>
         </div>
     </nav>
+
+    <main id="main-content">
 
     <!-- Header -->
     <header id="header">
@@ -31,14 +34,14 @@
     </header>
 
     <!-- Index image -->
-    <section id="project" class="section ">
+    <section class="section">
         <div class="project-image">
-            <img src="/images/graphic/graphic-index.png" alt="Project Title Image">
+            <img src="/images/graphic/graphic-index.png" alt="Graphic design works overview">
         </div>
     </section>
 
     <!-- Project info -->
-    <section id="project" class="section">
+    <section class="section">
         <div class="project-info">
             <h2>About my works</h2>
             <p>
@@ -50,11 +53,11 @@
                 function meet in a
                 tangible way. </p>
         </div>
-        <hr class="divider">
+        <hr class="divider" aria-hidden="true">
     </section>
 
 
-    <section id="project" class="section">
+    <section class="section">
         <div class="left-title-boxes">
             <h2>Kanna — Conceptual Brand & Packaging
             </h2>
@@ -83,7 +86,7 @@
         </div>
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
         <div class="left-title-boxes">
             <h2>Japan Magazine — Layout Design</h2>
             <div>
@@ -115,6 +118,8 @@
             <img class="image-grid-item" src="images/graphic/japan3.png" alt="Japan magazine 3">
         </div>
     </section>
+
+    </main>
 
 
 

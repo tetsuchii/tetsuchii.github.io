@@ -15,29 +15,32 @@
     />
   </head>
   <body>
-    <nav class="fixed-nav">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav class="fixed-nav" aria-label="Main navigation">
       <div class="nav-container">
         <a href="index.html" class="nav-logo-link"><img src="/images/logo.png" class="nav-logo" alt="Home"></a>
-        <button class="hamburger" id="hamburger-btn">&#9776;</button>
-        <ul class="nav-links">
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
+        <ul class="nav-links" id="nav-links">
           <li><a href="index.html#projects">Projects</a></li>
           <li><a href="index.html#about">About</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </div>
     </nav>
+
+    <main id="main-content">
     <header id="header">
       <h1>Play Poker With Friends!</h1>
       <p>a poker experience for friends</p>
     </header>
 
-    <section id="project" class="section">
+    <section class="section">
       <div class="project-image">
-        <img src="/images/poker/fekvo1_poker.png" alt="Poker Pals Hero" />
+        <img src="/images/poker/fekvo1_poker.png" alt="Play Poker With Friends – app mockup" />
       </div>
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
       <div class="project-info">
         <h2>About the Project</h2>
 
@@ -59,16 +62,19 @@
       </div>
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
       <table>
+        <thead>
         <tr>
-          <th>Project type</th>
-          <th>Role</th>
-          <th>Industry</th>
-          <th>Tools</th>
-          <th>Duration</th>
-          <th>Other info</th>
+          <th scope="col">Project type</th>
+          <th scope="col">Role</th>
+          <th scope="col">Industry</th>
+          <th scope="col">Tools</th>
+          <th scope="col">Duration</th>
+          <th scope="col">Other info</th>
         </tr>
+        </thead>
+        <tbody>
 
         <tr>
           <td>UI Design</td>
@@ -81,10 +87,12 @@
             component consistency.
           </td>
         </tr>
-      </table>
+      
+        </tbody>
+    </table>
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
       <div class="left-title-boxes">
         <h2>The Challenge</h2>
 
@@ -111,10 +119,10 @@
         "How might we make poker feel more social, playful, and approachable?"
       </blockquote>
 
-      <hr class="divider" />
+      <hr class="divider" aria-hidden="true" />
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
       <div class="text-content-center">
         <h2>Visual Direction</h2>
 
@@ -130,7 +138,7 @@
 
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
       <h2>Design System</h2>
 
       <div class="text-content-center">
@@ -151,7 +159,7 @@
       </div>
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
       <h2>Core Components</h2>
 
       <div class="text-content-center">
@@ -164,7 +172,7 @@
       </div>
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
       <h2>Final Design</h2>
 
       <div class="text-content-center">
@@ -179,7 +187,7 @@
       </div>
     </section>
 
-    <section id="project" class="section">
+    <section class="section">
       <h2>Takeaways</h2>
 
       <div class="text-content-center">
@@ -188,6 +196,8 @@
         </p>
       </div>
     </section>
+
+    </main>
 
         <footer>
       <p>&copy; 2026 Nina Törő. All Rights Reserved</p>
