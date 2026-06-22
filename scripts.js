@@ -228,184 +228,162 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// ── Glitch Hero Effect ────────────────────────────────
-// Surveillance / data-corruption aesthetic for the hero section.
-// Canvas-based: pre-baked noise frames + occasional glitch bands + rare artifact bursts.
-// Fully self-contained — no dependencies, no external assets.
+// ── Topographic Ripple Hero ───────────────────────────
+// Organic contour lines radiate from the blob as a source,
+// deformed by superimposed sine-wave noise. No external libs.
 (function () {
   "use strict";
 
-  // Bail if user prefers reduced motion
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-  var heroSection = document.querySelector(".hero-section");
-  if (!heroSection) return; // only runs on index.html
+  var hero = document.querySelector(".hero-section");
+  if (!hero) return;
 
-  // Create and append the canvas
+  // ── Canvas setup ─────────────────────────────────────
   var canvas = document.createElement("canvas");
-  canvas.className = "glitch-canvas";
+  canvas.className = "topo-canvas";
   canvas.setAttribute("aria-hidden", "true");
-  heroSection.appendChild(canvas);
-
+  hero.appendChild(canvas);
   var ctx = canvas.getContext("2d");
 
   // ── State ─────────────────────────────────────────────
-  var W = 0, H = 0;
-  var noiseFrames = [];   // pre-baked offscreen canvases
-  var activeFrame = 0;
-  var animId = null;
-  var resizeTimer = null;
+  var W, H;
+  var baseCX, baseCY; // resting center of the blob, updated at resize
+  var cx, cy;         // actual center each frame, with float applied
+  var t = 0;
+  var lastFrame = 0;
+  var resizeTimer;
+  var animId;
 
-  var lastRenderTime = 0;
-  var lastNoiseAdvance = 0;
-  var lastGlitchTime = 0;
-  var nextGlitchIn  = 3500 + Math.random() * 5500; // 3.5–9s between bands
-  var lastBurstTime = 0;
-  var nextBurstIn   = 12000 + Math.random() * 10000; // 12–22s between bursts
-  var burstUntil    = 0;   // timestamp when current burst ends
+  var FRAME_MS = 1000 / 24; // 24 fps cap — motion is very slow
+  var NUM_RINGS = 16;        // concentric contour levels
+  var RING_PTS  = 160;       // path points per ring (smooth curves)
 
-  // ── Constants ─────────────────────────────────────────
-  var RENDER_MS   = 1000 / 30; // cap render loop at 30fps
-  var NOISE_MS    = 1000 / 8;  // advance noise frame at 8fps
-  var NUM_FRAMES  = 8;         // pre-baked noise frames to cycle
-  var NOISE_SCALE = 4;         // render noise at ¼ size → pixelated upscale
+  // blobMotion period is 2 s (alternate infinite).
+  // t increments 0.006 / frame × 24 fps = 0.144 t-units / second.
+  // 2 s = 0.288 t-units → angular frequency 2π / 0.288 ≈ 21.8 rad per t-unit.
+  var BLOB_FREQ = 21.8;
+  var FLOAT_AMP = 16; // px — how far the ring centre travels up/down
 
-  // ── Noise generation ──────────────────────────────────
-  function generateNoiseFrames() {
-    noiseFrames = [];
-    var sw = Math.ceil(W / NOISE_SCALE);
-    var sh = Math.ceil(H / NOISE_SCALE);
-
-    for (var f = 0; f < NUM_FRAMES; f++) {
-      var nc  = document.createElement("canvas");
-      nc.width  = sw;
-      nc.height = sh;
-      var nc_ctx  = nc.getContext("2d");
-      var imgData = nc_ctx.createImageData(sw, sh);
-      var d = imgData.data;
-
-      // Sparse green pixels — ~1.8% of low-res pixels
-      var count = Math.floor(sw * sh * 0.018);
-      for (var i = 0; i < count; i++) {
-        var px  = Math.floor(Math.random() * sw);
-        var py  = Math.floor(Math.random() * sh);
-        var idx = (py * sw + px) * 4;
-        d[idx]     = 0;                                    // R
-        d[idx + 1] = 22 + Math.floor(Math.random() * 100); // G — dim to mid green
-        d[idx + 2] = Math.floor(Math.random() * 9);        // B
-        d[idx + 3] = 30 + Math.floor(Math.random() * 90);  // A — varied opacity
-      }
-
-      nc_ctx.putImageData(imgData, 0, 0);
-      noiseFrames.push(nc);
+  // ── Locate blob resting center relative to hero ──────
+  function findCenter() {
+    var blob = document.getElementById("circle");
+    if (blob) {
+      var hr = hero.getBoundingClientRect();
+      var br = blob.getBoundingClientRect();
+      baseCX = br.left + br.width  * 0.5 - hr.left;
+      baseCY = br.top  + br.height * 0.5 - hr.top;
+    } else {
+      baseCX = W * 0.5;
+      baseCY = H * 0.63;
     }
   }
 
-  // ── Canvas resize ─────────────────────────────────────
+  // ── Resize handler ───────────────────────────────────
   function resize() {
-    W = heroSection.offsetWidth;
-    H = heroSection.offsetHeight;
+    W = hero.offsetWidth;
+    H = hero.offsetHeight;
     canvas.width  = W;
     canvas.height = H;
-    generateNoiseFrames();
+    findCenter();
   }
 
-  function onResize() {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(resize, 250);
+  // ── Noise field ──────────────────────────────────────
+  // Superimposed sine waves approximate organic 2-D noise.
+  // Different frequencies at each ring → no two rings look alike.
+  // Time parameter t makes the field slowly drift.
+  function noise(angle, radius, time) {
+    var a = angle;
+    var r = radius * 0.0025; // normalise so larger radii aren't over-deformed
+    return (
+      Math.sin(a * 2.0 + r * 1.4 + time * 0.13) * 0.32 +
+      Math.sin(a * 3.3 - r * 2.0 + time * 0.08) * 0.23 +
+      Math.sin(a * 1.1 + r * 3.3 - time * 0.10) * 0.19 +
+      Math.sin(a * 4.8 + r * 0.9 + time * 0.16) * 0.14 +
+      Math.sin(a * 6.1 - r * 1.6 - time * 0.06) * 0.08 +
+      Math.sin(a * 0.7 + r * 4.5 + time * 0.05) * 0.04
+    );
+    // Peaks at ±1.0, typical range ±0.45
   }
 
-  // ── Draw current noise frame (upscaled, pixelated) ────
-  function drawNoise() {
-    if (!noiseFrames.length) return;
-    ctx.imageSmoothingEnabled = false;
-    ctx.drawImage(noiseFrames[activeFrame], 0, 0, W, H);
-  }
+  // ── Draw all contours ────────────────────────────────
+  function drawContours() {
+    // Furthest ring just clears the most distant corner from cx/cy
+    var maxR = Math.sqrt(
+      Math.max(cx, W - cx) * Math.max(cx, W - cx) +
+      Math.max(cy, H - cy) * Math.max(cy, H - cy)
+    ) * 1.08;
+    var minR = 22; // start just outside the blob (blob ≈ 44–66 px diameter)
 
-  // ── Draw glitch artifacts ─────────────────────────────
-  // intensity: false = subtle background bands, true = burst mode
-  function drawArtifacts(intense) {
-    var count = intense
-      ? 3 + Math.floor(Math.random() * 5)
-      : 1 + Math.floor(Math.random() * 3);
+    ctx.lineWidth = 1.0;
 
-    for (var i = 0; i < count; i++) {
-      var y     = Math.floor(Math.random() * H * 0.80); // keep to upper 80%
-      var alpha = (intense ? 0.055 : 0.025) + Math.random() * 0.065;
-      var green = 45 + Math.floor(Math.random() * 135);
-      var rb    = Math.floor(Math.random() * 11);
+    for (var i = 0; i < NUM_RINGS; i++) {
+      var p = i / (NUM_RINGS - 1); // 0 → 1
 
-      ctx.fillStyle = "rgba(0," + green + "," + rb + "," + alpha + ")";
+      // Non-linear spacing: rings are denser near the source,
+      // spread out toward the edges — mirrors natural topography.
+      var sp    = Math.pow(p, 0.68);
+      var baseR = minR + sp * (maxR - minR);
 
-      if (Math.random() < 0.62) {
-        // Horizontal band — full-width or partial
-        var bw = Math.random() < 0.32
-          ? Math.floor(W * (0.25 + Math.random() * 0.55))
-          : W;
-        var bx = bw < W ? Math.floor(Math.random() * (W - bw)) : 0;
-        var bh = 1; // 1px — clean, surgical
-        ctx.fillRect(bx, y, bw, bh);
-      } else {
-        // Pixel-cluster artifact
-        var cx = Math.floor(Math.random() * W);
-        var cw = 1 + Math.floor(Math.random() * (intense ? 12 : 5));
-        var ch = 1 + Math.floor(Math.random() * 3);
-        ctx.fillRect(cx, y, cw, ch);
+      // Opacity falls with distance — innermost rings most visible.
+      var fade  = Math.pow(1 - p, 1.6);
+      if (fade < 0.006) continue;
+
+      ctx.beginPath();
+
+      for (var j = 0; j <= RING_PTS; j++) {
+        var angle = (j / RING_PTS) * Math.PI * 2;
+
+        // Noise-driven deformation: ±20 % of base radius
+        var n = noise(angle, baseR, t);
+        var r = baseR * (1 + n * 0.20);
+        if (r < 1) r = 1;
+
+        // Subtle elliptical bias (mirrors the morphing blob's rough aspect)
+        var x = cx + Math.cos(angle) * r * 1.07;
+        var y = cy + Math.sin(angle) * r * 0.94;
+
+        if (j === 0) ctx.moveTo(x, y);
+        else         ctx.lineTo(x, y);
       }
-    }
 
-    // Rare vertical fragment — like a column of corrupted data
-    if (Math.random() < (intense ? 0.22 : 0.06)) {
-      var vx = Math.floor(Math.random() * W);
-      var vw = 1 + Math.floor(Math.random() * 2);
-      var vh = 6 + Math.floor(Math.random() * 30);
-      var vy = Math.floor(Math.random() * H * 0.65);
-      ctx.fillStyle = "rgba(0," + (40 + Math.floor(Math.random() * 80)) + ",0,"
-        + (0.035 + Math.random() * 0.065) + ")";
-      ctx.fillRect(vx, vy, vw, vh);
+      ctx.closePath();
+
+      // Palette: --border-ui #527a58 = rgb(82, 122, 88)
+      var alpha = (fade * 0.55).toFixed(3);
+      ctx.strokeStyle = "rgba(82,122,88," + alpha + ")";
+      ctx.stroke();
     }
   }
 
-  // ── Main render loop ──────────────────────────────────
+  // ── Render loop ──────────────────────────────────────
   function render(ts) {
     animId = requestAnimationFrame(render);
+    if (ts - lastFrame < FRAME_MS) return;
+    lastFrame = ts;
 
-    // Hard cap at 30fps
-    if (ts - lastRenderTime < RENDER_MS) return;
-    lastRenderTime = ts;
+    // Extremely slow drift — feels geological, not animated
+    t += 0.006;
+
+    // Float the ring centre with the same period as blobMotion (2 s).
+    // A slight horizontal drift on a different frequency adds organic feel.
+    cx = baseCX + 3  * Math.sin(BLOB_FREQ * t * 0.71);
+    cy = baseCY + FLOAT_AMP * Math.sin(BLOB_FREQ * t);
 
     ctx.clearRect(0, 0, W, H);
-
-    // Advance noise frame at 8fps
-    if (ts - lastNoiseAdvance > NOISE_MS) {
-      activeFrame = (activeFrame + 1) % NUM_FRAMES;
-      lastNoiseAdvance = ts;
-    }
-
-    drawNoise();
-
-    // Background glitch bands — every 3.5–9s
-    if (ts - lastGlitchTime > nextGlitchIn) {
-      drawArtifacts(false);
-      lastGlitchTime = ts;
-      nextGlitchIn = 3500 + Math.random() * 5500;
-    }
-
-    // Artifact burst — every 12–22s; lasts 180–560ms
-    if (ts - lastBurstTime > nextBurstIn) {
-      burstUntil    = ts + 180 + Math.random() * 380;
-      lastBurstTime = ts;
-      nextBurstIn   = 12000 + Math.random() * 10000;
-    }
-
-    // During burst: draw intense artifacts on ~60% of frames
-    if (ts < burstUntil && Math.random() < 0.60) {
-      drawArtifacts(true);
-    }
+    drawContours();
   }
 
-  // ── Init ──────────────────────────────────────────────
-  window.addEventListener("resize", onResize);
-  resize();
-  animId = requestAnimationFrame(render);
+  // ── Init ─────────────────────────────────────────────
+  window.addEventListener("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(resize, 250);
+  });
+
+  // Defer first paint slightly so the DOM has laid out
+  // and getBoundingClientRect returns the correct blob position.
+  setTimeout(function () {
+    resize();
+    animId = requestAnimationFrame(render);
+  }, 80);
 })();

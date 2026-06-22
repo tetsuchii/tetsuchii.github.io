@@ -58,7 +58,7 @@ nav {
     z-index: 10;
     text-align: center;
     width: 100%;
-    background-color: rgba(11, 14, 12, 0.97);
+    background-color: rgba(16, 16, 16, 0.97);
     border-bottom: 1px solid var(--border);
     display: flex;
     justify-content: flex-end;
@@ -1116,7 +1116,7 @@ td a:hover {
   }
 }
 
-/* ── Glitch Hero ────────────────────────────────────── */
+/* ── Hero Section ───────────────────────────────────── */
 .hero-section {
     position: relative;
     height: 100vh;
@@ -1134,8 +1134,8 @@ td a:hover {
     background-color: transparent;
 }
 
-/* Canvas sits behind all content */
-.glitch-canvas {
+/* Topographic canvas — behind all content, fades at bottom */
+.topo-canvas {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -1143,29 +1143,11 @@ td a:hover {
     z-index: 0;
     pointer-events: none;
     display: block;
-    /* Fade out toward bottom so glitch doesn't bleed into projects section */
-    -webkit-mask-image: linear-gradient(to bottom, black 45%, transparent 90%);
-    mask-image: linear-gradient(to bottom, black 45%, transparent 90%);
+    -webkit-mask-image: linear-gradient(to bottom, black 68%, transparent 94%);
+    mask-image: linear-gradient(to bottom, black 68%, transparent 94%);
 }
 
-/* Subtle CRT scan-line texture — purely CSS, zero JS cost */
-.hero-section::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-    background: repeating-linear-gradient(
-        0deg,
-        transparent 0px,
-        transparent 2px,
-        rgba(0, 10, 3, 0.045) 3px
-    );
-    -webkit-mask-image: linear-gradient(to bottom, black 45%, transparent 90%);
-    mask-image: linear-gradient(to bottom, black 45%, transparent 90%);
-}
-
-/* Content stack above canvas and scan lines */
+/* Content above canvas */
 .hero-section > header,
 .hero-section > .animation-container {
     position: relative;
